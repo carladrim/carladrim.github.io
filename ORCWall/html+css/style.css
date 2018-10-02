@@ -163,6 +163,11 @@
 .feedoptions{
 	width:100%;
 	height:4em;
+	display: flex;
+	flex-direction: row;
+
+}
+.butgrid{
 
 }
 .sidebarsmall{
@@ -212,8 +217,7 @@
 	margin-left: 220px;
 	margin-top: 4.5em;
 	background-color: #F1F1F1;
-	justify-content: space-around;
-
+	justify-content: center;
 	height: 100%;
 	width: calc(100% - 220px);
 	border: 2px solid green;
@@ -221,10 +225,13 @@
 
 .feedBox{
 	max-width: 50%;
+	margin:2em;
 	background-color: #FEFEFE;
-	margin-top: 20px;
+	margin-top: 2em;
 	width: 312px;
-	height: 217px;
+
+	border-radius: 8px;
+	overflow: hidden;
 }
 
 .imageOnFeedBlock{

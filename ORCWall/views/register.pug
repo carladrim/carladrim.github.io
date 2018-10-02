@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	h1 Register
+	form(method='POST', action='/user/register')
+		#form-group
+			label E-MAIL: 
+			input.form-control(name='email', type='text')
+		#form-group
+			label PASSWORD: 
+			input.form-control(name='password', type='password')
+		#form-group
+			label REPEAT PASSWORD: 
+			input.form-control(name='r_password', type='password')
+		#form-group
+			label FIRST NAME: 
+			input.form-control(name='first_name', type='text')
+		#form-group
+			label LAST NAME: 
+			input.form-control(name='last_name', type='text')
+		#form-group
+			label ORCID: 
+			input.form-control(name='orcid', type='text')
+		br
+		input.btn.btn-primary(type='submit', value='Register')
+		br
+		a(href='/user/login') Login Account

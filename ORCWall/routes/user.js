@@ -76,12 +76,11 @@ router.get('/login', (req, res) => {
 });
 
 // Login Process
-router.post('/login', (req, res, next) => {
+router.post('/login',
 	passport.authenticate('local', {
-		sucessRedirect: '/',
-		failureRedirect: '/user/login',
-		failureFlash: true
-	})(req, res, next);
-});
+		successRedirect: '/',
+		failureRedirect: '/user/login'
+	})
+);
 
 module.exports = router;

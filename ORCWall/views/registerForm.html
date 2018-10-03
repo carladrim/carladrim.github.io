@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Register Form</title>
+		<link rel="stylesheet" href="/css/registerForm.css" type="text/css">
+	</head>
+	<body>
+		<div id="idformwrapper">
+			<form id="idformwrapperauxiliar" method="POST" action="/user/register">
+
+				<div style="width: 100%; display: flex; flex-direction: column;">
+					<label class="textoregisterform"><b>E-MAIL</b></label>
+					<input id="emailinput" name="email" type="text" placeholder="Enter e-mail" required>
+				</div>
+
+
+				<div style="width: 100%; display: flex; flex-direction: ltr;">
+					<div style="display: flex; width: 50%; flex-direction: column;">
+						<label class="textoregisterform"><b>PASSWORD</b></label>
+						<input id="passwordinput" name="password" type="password" placeholder="Enter password" required>
+					</div>
+
+					<div style="display: flex; width: 50%; flex-direction: column;">
+						<label class="textoregisterform"><b>REPEAT PASSWORD</b></label>
+						<input id="repeatpasswordinput" name="r_password" type="password" placeholder="Enter same password" required>
+					</div>
+					
+				</div>
+
+				<hr style="width: 90%;"> </hr>
+
+				<div style="width: 100%; display: flex; flex-direction: ltr;">
+					<div style="display: flex; width: 50%; flex-direction: column;">
+						<label class="textoregisterform"><b>FIRST NAME</b></label>
+						<input id="firstnameinput" name="first_name" type="text" placeholder="Enter first name" required>
+					</div>
+
+					<div style="display: flex; width: 50%; flex-direction: column;">
+						<label class="textoregisterform"><b>LAST NAME</b></label>
+						<input id="lastnameinput" name="last_name" type="text" placeholder="Enter last name" required>
+					</div>
+					
+				</div>
+
+				<div style="width: 100%; display: flex; flex-direction: ltr;">
+					<div style="display: flex; width: 50%; flex-direction: column;">
+						<label class="textoregisterform"><b>Birthday</b></label>
+						<input id="birthdayinput" type="text" placeholder="DD-MM-YYYY">
+					</div>
+					
+				</div>
+
+				<div id="buttonsdiv">
+					<button id="createaccountbutton" type="button" onclick="location.href = '/user/login';">Already have an account?</button>
+					<button id="loginbutton" type="submit">Create Account</button>
+				</div>
+
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,15 +1,1 @@
-extends layout
-
-block content
-	h1 Login
-	form(method='POST', action='/user/login')
-		#form-group
-			label E-MAIL: 
-			input.form-control(name='email', type='text')
-		#form-group
-			label PASSWORD: 
-			input.form-control(name='password', type='password')
-		br
-		input.btn.btn-primary(type='submit', value='Login')
-		br
-		a(href='/user/register') Register
+include loginForm.html

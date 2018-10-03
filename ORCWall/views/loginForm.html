@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Form</title>
+		<link rel="stylesheet" href="/css/loginForm.css" type="text/css">
+	</head>
+	<body>
+		<div id="idformwrapper">
+			<form id="idformwrapperauxiliar" method="POST" action="/user/login">
+
+
+
+				<div style="width: 100%;">
+					<label class="textoreloginform"><b>E-MAIL</b></label>
+					<input id="emailinput" name="email" type="text" placeholder="Enter e-mail" required>
+				</div>
+
+
+
+				<div style="width: 100%;">
+					<label class="textoreloginform"><b>PASSWORD</b></label>
+				<input id="password" name="password" type="password" placeholder="Enter password" required>
+				</div>
+
+
+
+				<div id="buttonsdiv">
+					<button id="createaccountbutton" type="button" onclick="location.href = '/user/register';">Create Account</button>
+					<button id="loginbutton" type="submit">Login</button>
+				</div>
+
+
+
+			</form>
+		</div>
+	</body>
+</html>

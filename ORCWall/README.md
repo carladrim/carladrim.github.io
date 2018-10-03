@@ -122,7 +122,7 @@ $ use orcwall
 4. Type the following command create a new collection called *users*
 
 ```sh
-$ db.createCollection()
+$ db.createCollection('users')
 ```
 
 5. Type the following command to check the collections inside your database

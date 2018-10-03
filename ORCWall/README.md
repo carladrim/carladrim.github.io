@@ -1,4 +1,4 @@
-# ORCWALL Application
+# ORCWall Application
 
 ## Technologies
 * Node.js
@@ -17,6 +17,15 @@
 ## Usage
 
 ### Installation
+
+#### Install Node.js
+
+To install Node.js on your machine, go to the following website: https://nodejs.org/en/.
+Download and install the LTS (Long Term Support) version.
+
+#### Install MongoDB
+
+*To be added*
 
 #### Install the dependencies
 

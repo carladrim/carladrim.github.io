@@ -36,12 +36,20 @@ Download and install the LTS (Long Term Support) version.
   * Accept the terms in the license agreement and click *Next*
   * Click on the *Custom* button
   * Click the *Browse...* button and create a new folder called *mongodb* inn the *C:/* directory; select that folder as the installation folder.
+  
+  
   ![tut1](readme/tut1.png)
+  
+  
   * Make sure that the *Install MongoD as a Service* and *Run service as Network Service user* boxes are checked, and click *Next*
   * Unckeck the *Install MongoDB Compass* box and click *Next*
   * Click *Install*
   * If a window pops up informing you that *Service MongoDB has failed to start*, don't panic, this issue will be solved later. Just click *Ignore*
+  
+  
   ![tut2](readme/tut2.png)
+  
+  
   * Click *Finish*
   
 4. Create a folder called *db* in the *C:/mongodb/data/* directory

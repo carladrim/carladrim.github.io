@@ -4,7 +4,7 @@
 /*****************************/
 /*****************************/
 
-#idformwrapper{
+.formwrapper{
   display:          flex;
   border:           1px solid red;
   height:           579px;

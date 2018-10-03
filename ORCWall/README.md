@@ -32,17 +32,17 @@ Download and install the LTS (Long Term Support) version.
 2. Open the .msi file
 
 3. Follow the MongoDB Community Edition installation
-  a. Click *Next*
-  b. Accept the terms in the license agreement and click *Next*
-  c. Click on the *Custom* button
-  d. Click the *Browse...* button and create a new folder called *mongodb* inn the *C:/* directory; select that folder as the installation folder.
+  * Click *Next*
+  * Accept the terms in the license agreement and click *Next*
+  * Click on the *Custom* button
+  * Click the *Browse...* button and create a new folder called *mongodb* inn the *C:/* directory; select that folder as the installation folder.
   ![tut1](/readme/tut1.png)
-  e. Make sure that the *Install MongoD as a Service* and *Run service as Network Service user* boxes are checked, and click *Next*
-  f. Unckeck the *Install MongoDB Compass* box and click *Next*
-  g. Click *Install*
-  h. If a window pops up informing you that *Service MongoDB has failed to start*, don't panic, this issue will be solved later. Just click *Ignore*
+  * Make sure that the *Install MongoD as a Service* and *Run service as Network Service user* boxes are checked, and click *Next*
+  * Unckeck the *Install MongoDB Compass* box and click *Next*
+  * Click *Install*
+  * If a window pops up informing you that *Service MongoDB has failed to start*, don't panic, this issue will be solved later. Just click *Ignore*
   ![tut2](/readme/tut2.png)
-  i. Click *Finish*
+  * Click *Finish*
   
 4. Create a folder called *db* in the *C:/mongodb/data/* directory
 
@@ -55,25 +55,25 @@ $ net start MongoDB
 ```
 
 7. If an error saying *The service is not responding to the following function* appears, do the following
-  a. Change your current directory to *C:/mongodb/bin/* using the following command
+  * Change your current directory to *C:/mongodb/bin/* using the following command
   
   ```sh
   $ cd C:/mongodb/bin/
   ```
   
-  b. Type the following command
+  * Type the following command
   
   ```sh
   $ mongod --remove
   ```
   
-  c. And then type the following command
+  * And then type the following command
   
   ```sh
   $ mongod --logpath c:\mongodb\log\mongo.log --dbpath c:\mongodb\data\db --directoryperdb --install
   ```
   
-  d. And finally type the following command
+  * And finally type the following command
   
   ```sh
   $ net start MongoDB

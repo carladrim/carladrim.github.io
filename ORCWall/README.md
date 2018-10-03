@@ -97,7 +97,7 @@ If you want to learn MongoDB more in depth, check its [documentation](https://do
 
 You only need to create the databases and its collections. The databases will be local for now.
 
-*Note*: Mindo your uppercase and lowercase letters
+*Note*: Mind your uppercase and lowercase letters
 
 When you execute *mongo.exe*, you'll be met by a command prompt
 

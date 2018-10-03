@@ -10,6 +10,10 @@
 * Passport.js Authentication
 * BCrypt Hashing
 
+### Recommended Technologies
+* GitBash
+* A text editor for code (i.e. Sublime Text 3, Atom)
+
 ## Usage
 
 ### Installation

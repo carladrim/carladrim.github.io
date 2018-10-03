@@ -4,11 +4,24 @@
 /*****************************/
 /*****************************/
 
+
+body{
+  background-color: #F1F1F1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+}
+
 .formwrapper{
   display:          flex;
   border:           1px solid red;
-  height:           579px;
   width:            478px;
+  height:auto;
+  background-color: #FEFEFE;
+  box-shadow:       4px 2px 4px rgba(134, 134, 134, 0.25);
+
 }
 
 #idformwrapperauxiliar{

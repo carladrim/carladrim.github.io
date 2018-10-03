@@ -26,8 +26,8 @@ Download and install the LTS (Long Term Support) version.
 #### Install MongoDB
 
 1. Download MongoDB Community Edition
-  a. Open a web browser and visit the [MongoDB Download Center Community Server Tab](https://www.mongodb.com/download-center?jmp=docs#production)
-  b. Click Download (msi)
+  * Open a web browser and visit the [MongoDB Download Center Community Server Tab](https://www.mongodb.com/download-center?jmp=docs#production)
+  * Click Download (msi)
 
 2. Open the .msi file
 

@@ -1,5 +1,5 @@
 /*							*/
-/*		GLOBAL CONTAINER	*/
+/*		GLOBAL CONTAINER--	*/
 /*							*/
 
 .container{
@@ -12,7 +12,7 @@
 
 
 /*					*/
-/*		NAV BAR		*/
+/*		NAV BAR--		*/
 /*					*/
 
 .navbar{
@@ -38,11 +38,13 @@
 	display: block;
 	padding: 0px;
 	min-width: 11em;
-	max.width: 200px;
+	max-width: 200px;
 	margin-left: 2.5em;
 }
 
-/* SEARCH BAR  - top bar */
+
+
+/* SEARCH BAR--  - navigation bar */
 .navbarsearch{
 	margin: 1em;
 	background-color: #EEEEEE;
@@ -62,7 +64,6 @@
 	height: auto;
 	border:none;
 	width: calc(100% - 5em);
-
 }
 
 .navbarsearch input[type=text] {
@@ -73,7 +74,6 @@
 		background-color: transparent;
     font-size: 1em;
 		color: #91A59B;
-
 }
 
 .Lupa_image_wrapper{
@@ -92,8 +92,7 @@
 
 
 
-/* BUTTONS - top bar*/
-
+/* BUTTONS-- - navigation bar*/
 .but_nav_wrapper{
 	float:right;
 	display: flex;
@@ -138,19 +137,21 @@
 
 
 /*						*/
-/*		MAIN BODY		*/
+/*		MAIN BODY--		*/
 /*						*/
 
 
 .childcontainer{
 	display: flex;
-	width: auto;
+	width: 100%;
 	height:auto;
 	position: absolute;
-		/* subtract the top bar height */
 }
 
+/* SIDE BAR--*/
+
 .sidebar{
+	z-index: 2;
 	margin-top: 4.5em;
 	position:fixed;
 	width: 220px;
@@ -158,7 +159,7 @@
 	display: flex;
 	background-color: #F2F8F0;
 	flex-direction: column;
-	box-shadow: 4px 2px 4px rgba(204, 204, 204, 0.25);
+	box-shadow: 4px 2px 4px rgba(204, 204, 204, 0.15);
 }
 .feedoptions{
 	width:100%;
@@ -177,7 +178,7 @@
 	width: 100%;
 	height: 100%;
 	margin-top: 4em;
-	margin-left: 2.5em;
+	padding-left: 2.5em;
 }
 
 .sidebarsections{
@@ -208,11 +209,9 @@
 	align-content: center;
 }
 
-.feed{
-	display: flex;
-	flex-direction: ltr;
-	flex-wrap: wrap;
+/* FEED--*/
 
+.feed{
 	position: relative;
 	margin-left: 220px;
 	margin-top: 4.5em;
@@ -220,21 +219,88 @@
 	justify-content: center;
 	height: 100%;
 	width: calc(100% - 220px);
-	border: 2px solid green;
 }
+.newscontainer{
+	margin:3em;
+	display: flex;
+	flex-direction: ltr;
+	flex-wrap: wrap;
+	position: relative;
+	justify-content: center;
 
+}
 .feedBox{
-	max-width: 50%;
 	margin:2em;
 	background-color: #FEFEFE;
-	margin-top: 2em;
 	width: 312px;
-
+	box-shadow: 4px 2px 4px rgba(204, 204, 204, 0.25);
 	border-radius: 8px;
 	overflow: hidden;
 }
 
+.containerbox{
+	margin: 1em;
+	color: #009245;
+}
+.textbox{
+	font-family: 'Muli', sans-serif;
+	font-weight: 700;
+}
+.textbox:hover{
+	cursor:pointer;
+}
 .imageOnFeedBlock{
 	display: block;
 	max-width: 100%;
+}
+
+/* 							 */
+/* PROFILE-EXCLUSIVE STYLING */
+/* 							 */
+
+img.userimage {
+	border-radius: 100%;
+	width: 60%;
+}
+
+div.userinfo {
+	width: 100%;
+	font-family: 'Muli', sans-serif;
+	font-weight: 400;
+	margin-left: -2.5em;
+	text-align: center;
+}
+
+.userdisplayname {
+	margin: 0;
+	margin-top: 0.5em;
+	color: #009245;
+	font-size: 1.8em;
+	font-weight: bolder;
+}
+
+.userbio {
+	margin: auto;
+	margin-top: 0.5em;
+	font-size: 1em;
+	color: #91A59B;
+	font-weight: lighter;
+	max-width: 80%;
+}
+
+div.icons-container {
+	margin-left: -1.25em;
+	margin-top: 2.5em;
+	display: flex;
+	justify-content: space-around;
+	width: 80%;
+}
+
+div.numbers-container {
+	width: 100%;
+	font-family: 'Muli', sans-serif;
+	font-weight: 400;
+	margin-left: -2.5em;
+	text-align: center;
+	color: #91A59B;
 }

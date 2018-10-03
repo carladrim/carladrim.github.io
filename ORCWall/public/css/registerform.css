@@ -1,0 +1,104 @@
+/*****************************/
+/*****************************/
+/*  CONTAINER REGIRTER FORM  */
+/*****************************/
+/*****************************/
+
+#idformwrapper{
+  display:          flex;
+  border:           1px solid red;
+  height:           579px;
+  width:            478px;
+}
+
+#idformwrapperauxiliar{
+  display:          flex;
+  justify-content:  space-between;
+  margin-left:      64px;
+  margin-top:       64px;
+  flex-direction:   column;
+  height:           calc(100% - 2*64px);
+  width:            calc(100% - 2*64px);
+  border:           3px solid yellow;
+}
+
+
+/*  EMAIL  */
+#emailinput{
+  margin:           0px;
+  padding:          0px;
+  height:           auto;
+  width:            100%;
+}
+
+#emailinput {
+  margin:           0px;
+  padding:          0px;
+  height:           auto;
+  width:            100%;
+}
+
+
+/*  PASSWORD  */
+#passwordinput{
+  margin:           0px;
+  padding:          0px;
+  height:           auto;
+  width:            90%;
+}
+
+#repeatpasswordinput{
+  margin:           0px;
+  padding:          0px;
+  height:           auto;
+  width:            90%;
+}
+
+
+/*  NAMES  */
+#firstnameinput{
+  margin:           0px;
+  padding:          0px;
+  height:           auto;
+  width:            90%;
+}
+
+#lastnameinput{
+  margin:           0px;
+  padding:          0px;
+  height:           auto;
+  width:            90%;
+}
+
+/*  BIRTHDAY */
+#birthdayinput{
+  margin:           0px;
+  padding:          0px;
+  height:           auto;
+  width:            90%;
+}
+
+
+/*  BUTTONS  */
+
+#buttonsdiv{
+  display:          flex;
+  flex-direction:   ltr;
+  justify-content:  space-between;
+  width:            100%;
+}
+
+#createaccountbutton{
+  width:            auto;
+}
+
+#loginbutton{
+  width:            auto;
+}
+
+
+
+/*  TEXTO - LABELS  */
+.textoregisterform{
+  color:            grey;
+}

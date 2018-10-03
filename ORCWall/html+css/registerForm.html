@@ -3,56 +3,56 @@
 <head>
 	<title> Register Form </title>
 	<link rel="stylesheet" href="forms.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Muli:400,600,700" rel="stylesheet">
 </head>
 <body>
 	<div class="formwrapper">
-		<form id="idformwrapperauxiliar">
+		<form class="formwrapperauxiliar">
 
-			<div style="width: 100%; display: flex; flex-direction: column;">
-				<label class="textoregisterform"><b>E-Mail</b></label>
-    			<input id="emailinput" type="text" placeholder="Enter E-mail" required>
+			<div style=";" class="formfield">
+				<label class="textform"><b>E-MAIL</b></label>
+    			<input class="inputform" id="emailinput" type="text" placeholder="Enter E-mail" required>
 			</div>
 
 
-			<div style="width: 100%; display: flex; flex-direction: ltr;">
-				<div style="display: flex; width: 50%; flex-direction: column;">
-					<label class="textoregisterform"><b>Password</b></label>
-    			<input id="passwordinput" type="text" placeholder="Enter Password" required>
+			<div style=" flex-direction: row;" class="formfield">
+				<div style="display: flex; width: 40%; flex-direction: column; ">
+					<label class="textform"><b>PASSWORD</b></label>
+    			<input class="inputform" id="passwordinput" type="text" placeholder="Enter Password" required>
 				</div>
-
-				<div style="display: flex; width: 50%; flex-direction: column;">
-					<label class="textoregisterform"><b>Repeat Password</b></label>
-    			<input id="repeatpasswordinput" type="text" placeholder="Enter same Password" required>
-				</div>
-
-			</div>
-
-			<hr style="width: 90%;"> </hr>
-
-			<div style="width: 100%; display: flex; flex-direction: ltr;">
-				<div style="display: flex; width: 50%; flex-direction: column;">
-					<label class="textoregisterform"><b>First Name</b></label>
-    			<input id="firstnameinput" type="text" placeholder="Enter First Name" required>
-				</div>
-
-				<div style="display: flex; width: 50%; flex-direction: column;">
-					<label class="textoregisterform"><b>Last Name</b></label>
-    			<input id="lastnameinput" type="text" placeholder="Last Name" required>
+				<div style="display: flex; width: 40% ; flex-direction: column; " class="formfield">
+					<label class="textform"><b>REPEAT PASSWORD</b></label>
+    			<input class="inputform" id="repeatpasswordinput" type="text" placeholder="Enter same Password" required>
 				</div>
 
 			</div>
 
-			<div style="width: 100%; display: flex; flex-direction: ltr;">
+			<hr style="margin-bottom: 2em; border: 0;  border-top: 1px solid #91A59B;"> </hr>
+
+			<div style="width: 100%; flex-direction: row;" class="formfield">
+				<div style="display: flex; width: 40%; flex-direction: column;" >
+					<label class="textform"><b>FIRST NAME</b></label>
+    			<input class="inputform" id="firstnameinput" type="text" placeholder="Enter First Name" required>
+				</div>
+
+				<div style="display: flex; width: 40% ; flex-direction: column; " class="formfield">
+					<label class="textform"><b>LAST NAME</b></label>
+    			<input class="inputform" id="lastnameinput" type="text" placeholder="Last Name" required>
+				</div>
+
+			</div>
+
+			<div style="width: 100%; display: flex; flex-direction: ltr;" class="formfield">
 				<div style="display: flex; width: 50%; flex-direction: column;">
-					<label class="textoregisterform"><b>Birthday</b></label>
+					<label class="textform"><b>Birthday</b></label>
     			<input id="birthdayinput" type="text" placeholder="DD-MM-YYYY" required>
 				</div>
 
 			</div>
 
-			<div id="buttonsdiv">
-    			<button id="createaccountbutton" type="button" onclick="location.href = 'loginform.html';"> Already have an account? </button>
-    			<button id="loginbutton" type="submit">Create Account</button>
+			<div class="buttonsdiv">
+    			<button id="createaccountbutton" class="secbutton" type="button" onclick="location.href = 'loginform.html';"> Already have an account? </button>
+    			<button id="loginbutton" class="mainbutton" type="submit">Create Account</button>
     		</div>
 
 

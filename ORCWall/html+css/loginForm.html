@@ -3,30 +3,31 @@
 <head>
 	<title> Login Form </title>
 	<link rel="stylesheet" href="forms.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Muli:400,600,700" rel="stylesheet">
 </head>
 <body>
 	<div class="formwrapper">
-		<form id="idformwrapperauxiliar">
+		<form class="formwrapperauxiliar">
 
 
 
-			<div style="width: 100%;">
-				<label class="textoreloginform"><b>Username</b></label>
-    			<input id="emailinput" type="text" placeholder="Enter Username" required>
+			<div style="width: 100%;" class="formfield">
+				<label class="textform"><b>USERNAME</b></label>
+    			<input class="inputform" id="emailinput" type="text" placeholder="Enter Username" required>
 			</div>
 
 
 
-			<div style="width: 100%;">
-				<label class="textoreloginform"><b>Password</b></label>
-    		<input id="passwordinput" type="text" placeholder="Enter Password" required>
+			<div style="width: 100%;" class="formfield">
+				<label class="textform"><b>PASSWORD</b></label>
+    		<input class="inputform" id="passwordinput" type="text" placeholder="Enter Password" required>
 			</div>
 
 
 
-    		<div id="buttonsdiv">
-    			<button id="createaccountbutton" type="button" onclick="location.href = 'registerform.html';"> Create Account </button>
-    			<button id="loginbutton" type="submit">Login</button>
+    		<div class="buttonsdiv" >
+    			<button id="createaccountbutton" class="secbutton" type="button" onclick="location.href = 'registerform.html';"> Create Account </button>
+    			<button id="loginbutton" class="mainbutton" type="submit">Login</button>
     		</div>
 
 

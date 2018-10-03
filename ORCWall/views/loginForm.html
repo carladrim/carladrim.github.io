@@ -2,31 +2,32 @@
 <html>
 	<head>
 		<title>Login Form</title>
-		<link rel="stylesheet" href="/html+css/forms.css" type="text/css">
+		<link rel="stylesheet" href="../html+css/forms.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Muli:400,600,700" rel="stylesheet">
 	</head>
 	<body>
 		<div class="formwrapper">
-			<form id="idformwrapperauxiliar" method="POST" action="/user/login">
+			<form id="idformwrapperauxiliar"  class="formwrapperauxiliar" method="POST" action="/user/login">
 
 
 
-				<div style="width: 100%;">
-					<label class="textoreloginform"><b>E-MAIL</b></label>
-					<input id="emailinput" name="email" type="text" placeholder="Enter e-mail" required>
+				<div style="width: 100%;"class="formfield" >
+					<label class="textform"><b>E-MAIL</b></label>
+					<input class="inputform" id="emailinput" name="email" type="text" placeholder="Enter e-mail" required>
 				</div>
 
 
 
-				<div style="width: 100%;">
-					<label class="textoreloginform"><b>PASSWORD</b></label>
-				<input id="password" name="password" type="password" placeholder="Enter password" required>
+				<div style="width: 100%;" class="formfield">
+					<label class="textform"><b>PASSWORD</b></label>
+				<input class="inputform" id="password" name="password" type="password" placeholder="Enter password" required>
 				</div>
 
 
 
-				<div id="buttonsdiv">
-					<button id="createaccountbutton" type="button" onclick="location.href = '/user/register';">Create Account</button>
-					<button id="loginbutton" type="submit">Login</button>
+				<div class="buttonsdiv">
+					<button id="createaccountbutton" class="secbutton" type="button" onclick="location.href = '/user/register';">Create Account</button>
+					<button id="loginbutton" class="mainbutton" type="submit">Login</button>
 				</div>
 
 

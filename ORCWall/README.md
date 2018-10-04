@@ -151,7 +151,7 @@ $ nodemon
 ### File Description
 
 |Directory           |Description                   |File(s) extension        |
-|--------------------|:----------------------------:|------------------------:|
+|--------------------|------------------------------|------------------------:|
 |config||.js|
 |models||.js|
 |public|Static assets like CSS files and Images are loaded from here|.css .png .svg|

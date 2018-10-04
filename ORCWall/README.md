@@ -161,4 +161,4 @@ $ nodemon
 
 ## Tutorials
 
-[![Node.js & Express From Scratch](http://img.youtube.com/vi/k_0ZzvHbNBQ&list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp&index=1/0.jpg)](http://www.youtube.com/watch?v=k_0ZzvHbNBQ&list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp&index=1)
+[![Node.js & Express From Scratch](http://img.youtube.com/vi/k_0ZzvHbNBQ/0.jpg)](http://www.youtube.com/watch?v=k_0ZzvHbNBQ&list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp&index=1)

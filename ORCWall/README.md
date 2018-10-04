@@ -20,7 +20,7 @@
 
 #### Install Node.js
 
-To install Node.js on your machine, go to the following website: https://nodejs.org/en/.
+To install Node.js on your machine, go to the following [website]https://nodejs.org/en/.
 Download and install the LTS (Long Term Support) version.
 
 #### Install MongoDB
@@ -35,7 +35,7 @@ Download and install the LTS (Long Term Support) version.
   * Click *Next*
   * Accept the terms in the license agreement and click *Next*
   * Click on the *Custom* button
-  * Click the *Browse...* button and create a new folder called *mongodb* inn the *C:/* directory; select that folder as the installation folder.
+  * Click the *Browse...* button and create a new folder called *mongodb* inn the *C:/* directory; select that folder as the installation folder
   
   
   ![tut1](readme/tut1.png)
@@ -97,9 +97,9 @@ If you want to learn MongoDB more in depth, check its [documentation](https://do
 
 You only need to create the databases and its collections. The databases will be local for now.
 
-*Note*: Mind your uppercase and lowercase letters
+*Note*: Mind your uppercase and lowercase letters.
 
-When you execute *mongo.exe*, you'll be met by a command prompt
+When you execute *mongo.exe*, you'll be met by a command prompt:
 
 1. Type the following command to check the databases in your computer
 
@@ -135,14 +135,14 @@ And that's all the MongoDB that you'll need to use.
 
 #### Install the dependencies
 
-To install the modules necessary for this application, open a command prompt on the project's directory (the directory that contains the *server.js* file) and type the following command
+To install the modules necessary for this application, open a command prompt on the project's directory (the directory that contains the *server.js* file) and type the following command:
 
 ```sh
 $ npm install
 ```
 #### Run app
 
-Open a command prompt on the project's directory and type the following command
+Open a command prompt on the project's directory and type the following command:
 
 ```sh
 $ nodemon
@@ -150,4 +150,11 @@ $ nodemon
 
 ### File Description
 
-*To be added*
+|Directory           |Description                   |File(s) extension        |
+|--------------------|------------------------------|------------------------:|
+|config||.js|
+|models||.js|
+|public|Static assets like CSS files and Images are loaded from here|.css .png .svg|
+|readme|Images that provide visual support to the README.md file|.png|
+|routes||.js|
+|views|Template files like HTML files and PUG files are rendered from here|.html .pug|

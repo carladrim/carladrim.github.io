@@ -24,7 +24,9 @@ router.post('/register', [
 		return value === req.body.password;
 	}),
 	check('first_name', 'First Name is Required').not().isEmpty(),
-	check('last_name', 'Last Name is Required').not().isEmpty()
+	check('first_name', 'First Name can\'t contain Numbers').not().matches(/\d/),
+	check('last_name', 'Last Name is Required').not().isEmpty(),
+	check('last_name', 'Last Name can\'t contain Numbers').not().matches(/\d/)
 
 ], (req, res) => {
 	const email = req.body.email;

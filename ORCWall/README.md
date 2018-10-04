@@ -162,3 +162,9 @@ $ nodemon
 ## Tutorials
 
 [![Node.js & Express From Scratch](http://img.youtube.com/vi/k_0ZzvHbNBQ/0.jpg)](http://www.youtube.com/watch?v=k_0ZzvHbNBQ&list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp&index=1)
+
+[![Node.js Tutorial For Absolute Beginners](http://img.youtube.com/vi/U8XF6AFGqlc/0.jpg)](http://www.youtube.com/watch?v=U8XF6AFGqlc)
+
+[![ExpressJS Crash Course](http://img.youtube.com/vi/gnsO8-xJ8rs/0.jpg)](http://www.youtube.com/watch?v=gnsO8-xJ8rs)
+
+[![MongoDB In 30 Minutes](http://img.youtube.com/vi/pWbMrx5rVBE/0.jpg)](http://www.youtube.com/watch?v=pWbMrx5rVBE)

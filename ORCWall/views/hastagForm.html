@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Register Form</title>
+		<link rel="stylesheet" href="../public/css/forms.css" type="text/css">
+	</head>
+	<body>
+		<div class="formwrapper">
+			<form class="formwrapperauxiliar" id="idformwrapperauxiliar" method="POST" action="/user/register">
+
+				<div class="formfield">
+					<label class="textform"><b>CHOOSE YOUR PROFILE PHOTO</b></label>
+
+					<input  type="file" onchange="onFileSelected(event)">
+				</div>
+
+
+				<div  class="formfield">
+
+						<label class="textform"><b>SEARCH FOR TOPICS TO FOLLOW</b></label>
+						<input class="inputform" id="passwordinput" name="password" type="password" placeholder="Look for hashtags" required>
+
+				</DIV>
+
+
+
+
+
+
+				<div class="buttonsdiv">
+					<button id="createaccountbutton" class="secbutton" type="button" onclick="location.href = '/user/login';">Already have an account?</button>
+					<button id="loginbutton" class="mainbutton" type="submit">Create Account</button>
+				</div>
+
+			</form>
+		</div>
+	</body>
+</html>

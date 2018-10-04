@@ -446,7 +446,19 @@ div.numbers-container {
 
 
 
+	.sidebar{
+		display: none;
+	}
 
+	.feed{
+		margin-left:0;
+			width:100%;
+	}
+
+	.newscontainer{
+		margin:0;
+		width:100%;
+	}
 
 
 

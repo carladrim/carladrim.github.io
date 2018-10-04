@@ -20,31 +20,31 @@
 
 #### Install Node.js
 
-To install Node.js on your machine, go to the following website: https://nodejs.org/en/.
+To install Node.js on your machine, go to the following [website]https://nodejs.org/en/.
 Download and install the LTS (Long Term Support) version.
 
 #### Install MongoDB
 
 1. Download MongoDB Community Edition
-  * Open a web browser and visit the [MongoDB Download Center Community Server Tab](https://www.mongodb.com/download-center?jmp=docs#production)
-  * Click Download (msi)
+  1. Open a web browser and visit the [MongoDB Download Center Community Server Tab](https://www.mongodb.com/download-center?jmp=docs#production)
+  2. Click Download (msi)
 
 2. Open the .msi file
 
 3. Follow the MongoDB Community Edition installation
-  * Click *Next*
-  * Accept the terms in the license agreement and click *Next*
-  * Click on the *Custom* button
-  * Click the *Browse...* button and create a new folder called *mongodb* inn the *C:/* directory; select that folder as the installation folder.
+  1. Click *Next*
+  2. Accept the terms in the license agreement and click *Next*
+  3. Click on the *Custom* button
+  4. Click the *Browse...* button and create a new folder called *mongodb* inn the *C:/* directory; select that folder as the installation folder
   
   
   ![tut1](readme/tut1.png)
   
   
-  * Make sure that the *Install MongoD as a Service* and *Run service as Network Service user* boxes are checked, and click *Next*
-  * Unckeck the *Install MongoDB Compass* box and click *Next*
-  * Click *Install*
-  * If a window pops up informing you that *Service MongoDB has failed to start*, don't panic, this issue will be solved later. Just click *Ignore*
+  5. Make sure that the *Install MongoD as a Service* and *Run service as Network Service user* boxes are checked, and click *Next*
+  6. Unckeck the *Install MongoDB Compass* box and click *Next*
+  7. Click *Install*
+  8. If a window pops up informing you that *Service MongoDB has failed to start*, don't panic, this issue will be solved later. Just click *Ignore*
   
   
   ![tut2](readme/tut2.png)
@@ -63,25 +63,25 @@ $ net start MongoDB
 ```
 
 7. If an error saying *The service is not responding to the following function* appears, do the following
-  * Change your current directory to *C:/mongodb/bin/* using the following command
+  1. Change your current directory to *C:/mongodb/bin/* using the following command
   
   ```sh
   $ cd C:/mongodb/bin/
   ```
   
-  * Type the following command
+  2. Type the following command
   
   ```sh
   $ mongod --remove
   ```
   
-  * And then type the following command
+  3. And then type the following command
   
   ```sh
   $ mongod --logpath c:\mongodb\log\mongo.log --dbpath c:\mongodb\data\db --directoryperdb --install
   ```
   
-  * And finally type the following command
+  4. And finally type the following command
   
   ```sh
   $ net start MongoDB
@@ -97,9 +97,9 @@ If you want to learn MongoDB more in depth, check its [documentation](https://do
 
 You only need to create the databases and its collections. The databases will be local for now.
 
-*Note*: Mind your uppercase and lowercase letters
+*Note*: Mind your uppercase and lowercase letters.
 
-When you execute *mongo.exe*, you'll be met by a command prompt
+When you execute *mongo.exe*, you'll be met by a command prompt:
 
 1. Type the following command to check the databases in your computer
 
@@ -135,14 +135,14 @@ And that's all the MongoDB that you'll need to use.
 
 #### Install the dependencies
 
-To install the modules necessary for this application, open a command prompt on the project's directory (the directory that contains the *server.js* file) and type the following command
+To install the modules necessary for this application, open a command prompt on the project's directory (the directory that contains the *server.js* file) and type the following command:
 
 ```sh
 $ npm install
 ```
 #### Run app
 
-Open a command prompt on the project's directory and type the following command
+Open a command prompt on the project's directory and type the following command:
 
 ```sh
 $ nodemon

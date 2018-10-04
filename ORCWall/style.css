@@ -90,6 +90,7 @@
 	height: auto;
 	width: 2em;
 	right:0;
+		margin-left: 2.8em;
 
 }
 
@@ -98,7 +99,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	cursor:pointer;
-	margin-left: 2.8em;
+
     margin-top: 0.3em;
 }
 
@@ -274,7 +275,7 @@
 	margin-top: 2em;
 	width:auto;
 	display: flex;
-	
+
 
 }
 
@@ -344,7 +345,7 @@ div.numbers-container {
 
 
 @media only screen and (max-width: 1024px) {
-	
+
 	#logonav {
 		display: none;
 	}
@@ -366,7 +367,7 @@ div.numbers-container {
 
 	.navbar {
 	}
-	
+
 	.but_nav_wrapper{    /**/
 		display: none;
 	}

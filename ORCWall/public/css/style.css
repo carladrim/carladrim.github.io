@@ -146,6 +146,11 @@
 	box-shadow: 4px 2px 4px rgba(134, 134, 134, 0.25);
 }
 
+.nav_icon:hover #sig{
+	fill: #009245;
+	box-shadow: 4px 2px 4px rgba(134, 134, 134, 0.25);
+}
+
 
 
 /*						*/

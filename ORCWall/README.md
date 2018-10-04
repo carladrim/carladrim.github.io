@@ -154,7 +154,7 @@ $ nodemon
 |--------------------|:----------------------------:|------------------------:|
 |config||.js|
 |models||.js|
-|public||.css .png .svg|
-|readme||.png|
+|public|Static assets like CSS files and Images are loaded from here|.css .png .svg|
+|readme|Images that provide visual support to the README.md file|.png|
 |routes||.js|
-|views||.html .pug|
+|views|Template files like HTML files and PUG files are rendered from here|.html .pug|

@@ -20,7 +20,7 @@
 
 #### Install Node.js
 
-To install Node.js on your machine, go to the following [website]https://nodejs.org/en/.
+To install Node.js on your machine, go to the following [website](https://nodejs.org/en/).
 Download and install the LTS (Long Term Support) version.
 
 #### Install MongoDB
@@ -148,7 +148,7 @@ Open a command prompt on the project's directory and type the following command:
 $ nodemon
 ```
 
-### File Description
+## File Description
 
 |Directory           |Description                   |File(s) extension        |
 |--------------------|------------------------------|------------------------:|
@@ -158,3 +158,7 @@ $ nodemon
 |readme|Images that provide visual support to the README.md file|.png|
 |routes||.js|
 |views|Template files like HTML files and PUG files are rendered from here|.html .pug|
+
+## Tutorials
+
+[![Node.js & Express From Scratch](http://img.youtube.com/vi/k_0ZzvHbNBQ&list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp&index=1/0.jpg)](http://www.youtube.com/watch?v=k_0ZzvHbNBQ&list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp&index=1)

@@ -152,3 +152,9 @@ $ nodemon
 
 |Directory           |Description                   |File(s) extension        |
 |--------------------|:----------------------------:|------------------------:|
+|config||.js|
+|models||.js|
+|public||.css .png .svg|
+|readme||.png|
+|routes||.js|
+|views||.html .pug|

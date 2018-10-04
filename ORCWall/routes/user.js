@@ -64,7 +64,7 @@ router.post('/register', [
 						console.log(err);
 						return;
 					} else {
-						res.redirect('/user/login');
+						res.redirect('/');
 					}
 				});
 			});

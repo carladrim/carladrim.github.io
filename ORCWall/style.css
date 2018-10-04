@@ -42,6 +42,17 @@
 	margin-left: 2.5em;
 }
 
+#logomob {
+	display: none;
+	padding: 0px;
+	margin: auto;
+	max-height: 3.5em;
+	margin-left: 2.5em;
+}
+
+#burger-button {
+	display: none;
+}
 
 
 /* SEARCH BAR--  - navigation bar */
@@ -50,9 +61,8 @@
 	background-color: #EEEEEE;
 	height: 2.5em;
 	width: 35%;
-	/*max-width: 32.5em; */
 	display: flex;
-	flex-direction: ltr;
+	flex-direction: row;
 	align-items: center;
 	border-radius: 0.25em;
 	box-shadow: inset 2px 2px 2px rgba(157, 157, 157, 0.25);
@@ -67,13 +77,13 @@
 }
 
 .navbarsearch input[type=text] {
-		width:100%;
-		padding-left: 1em;
-		padding-right: 1em;
-    border: none;
-		background-color: transparent;
-    font-size: 1em;
-		color: #91A59B;
+	width:100%;
+	padding-left: 1em;
+	padding-right: 1em;
+	border: none;
+	background-color: transparent;
+	font-size: 1em;
+	color: #91A59B;
 }
 
 .Lupa_image_wrapper{
@@ -88,12 +98,14 @@
 	margin-left: auto;
 	margin-right: auto;
 	cursor:pointer;
+	margin-left: 2.8em;
+    margin-top: 0.3em;
 }
 
 
 
 /* BUTTONS-- - navigation bar*/
-.but_nav_wrapper{
+.but_nav_wrapper{    /**/
 	float:right;
 	display: flex;
 	height: auto;
@@ -298,4 +310,54 @@ div.numbers-container {
 	margin-left: -2.5em;
 	text-align: center;
 	color: #91A59B;
+}
+
+
+/*						*/
+/*		MEDIA QUERIES	*/
+/*						*/
+
+
+@media only screen and (max-width: 1024px) {
+	
+	#logonav {
+		display: none;
+	}
+
+	#logomob {
+		display: flex;
+	}
+
+	.logowrapper{
+		width: 1em;
+	}
+}
+
+@media only screen and (max-width: 860px){
+
+	#logomob {
+		margin-left: 3vw;
+	}
+
+	.navbar {
+	}
+	
+	.but_nav_wrapper{    /**/
+		display: none;
+	}
+
+	.but_nav_wrapper {
+		width: 100%;
+	}
+
+	.navbarsearch {
+		width: 60%;
+	}
+
+	#burger-button {
+		display: flex;
+		height: auto;
+		align-items: center;
+		margin-right: 1em;
+	}
 }

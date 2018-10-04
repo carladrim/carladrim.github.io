@@ -150,4 +150,5 @@ $ nodemon
 
 ### File Description
 
-*To be added*
+|Directory           |Description                   |File(s) extension        |
+|--------------------|:----------------------------:|------------------------:|

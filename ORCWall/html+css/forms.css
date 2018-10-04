@@ -130,3 +130,29 @@ body{
   cursor:           pointer;
   padding:          0;
 }
+
+
+
+@media screen and (orientation: portrait) {
+  body {
+    flex-direction: column;
+      background-color: #FEFEFE;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+  }
+
+  .formwrapper{
+    box-shadow: none;
+    width: 100%;
+    margin: 2em;
+    position: absolute;
+
+  }
+
+  .formwrapperauxiliar{
+    position: relative;
+    margin: 0px;
+    width:calc(100% - 2 * 32px );
+  }
+}

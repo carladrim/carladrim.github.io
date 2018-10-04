@@ -3,7 +3,7 @@
 <head>
 	<title>ORCWall</title>
 
-	<link rel="stylesheet" href="../public/css/style.css" type="text/css">
+	<link rel="stylesheet" href="/css/style.css" type="text/css">
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 	<link rel="shortcut icon" type="image/png" href="/resources/Images/favicon.png"/>
@@ -27,15 +27,10 @@
 
 	<!-- INSERE BLOCOS NO FEED -->
 	<script type="text/javascript">
-		function addFeedBlock(imagepath, alturax)
+		function addFeedBlock(imagepath)
 		{
-			document.write('<div class="feedBox" style="height:' + alturax + 'px"' + '><img class="imageOnFeedBlock" src="' + imagepath + '"> <div class="containerbox"> <div class="textbox">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div> </div> </div> ');
+			document.write('<div class="feedBox"  >     <img class="imageOnFeedBlock" src="' + imagepath + '">    </div> ');
 		}
-
-
-
-
-
 	</script>
 
 
@@ -58,8 +53,8 @@
 			<!-- TOP BAR - Logo -->
 
 			<div class="logowrapper">
-				<img id="logonav" src="../public/resources/Images/logonav.svg">
-				<img id="logomob" src="../public/resources/Logo/logosmall.svg">
+				<img id="logonav" src="/resources/Images/logonav.svg">
+				<img id="logomob" src="/resources/Logo/logosmall.svg">
 			</div>
 
 
@@ -98,7 +93,7 @@
 				</div>
 
 				<div class="nav_icon">
-					<img  src="../public/resources/Images/profilePicIcon.png">
+					<img  src="/resources/Images/profilePicIcon.png">
 				</div>
 
 				<div class="nav_icon">
@@ -126,7 +121,7 @@
 				<div class="sidebarsmall" id="mobilenavsmall">
 
                     <div class="userimagewrapper">
-						<img class="userimage" src="../public/resources/Images/user.png">
+						<img class="userimage" src="/resources/Images/user.png">
                     </div>
 
                     <div class="userinfo">
@@ -215,19 +210,10 @@
 
 				</div>
 				<div class= newscontainer>
-
 					<script type="text/javascript">
-
-						var altura = new Array(30);
-
-						for(var i=0; i<30; i++ ){
-								altura[i] = parseInt(Math.floor((Math.random() * 200) + 150));
-						}
-
 						for (var i = 0; i < 30; i++){
-							addFeedBlock('../public/temporary/feedImage.png', altura[i]);
+							addFeedBlock('/resources/Images/post.png');
 						}
-						//	var blocos = document.getElementsByClassName('feedBox');
 					</script>
 				</div>
 			</div>

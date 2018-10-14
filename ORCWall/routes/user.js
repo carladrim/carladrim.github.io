@@ -20,6 +20,9 @@ router.post('/register', [
 	check('email', 'Email is Required').not().isEmpty(),
 	check('email', 'Email is not Valid').isEmail(),
 	check('password', 'Password is Required').not().isEmpty(),
+	check('password', 'Password Must Contain 5 Characters').isLength({ min: 5 }),
+	check('password', 'Password Must Contain an Uppercase Letter').matches(/[A-Z]/),
+	check('password', 'Password Must Contain a Number').matches(/\d/),
 	check('r_password', 'Passwords do not Match').custom((value, { req }) => {
 		return value === req.body.password;
 	}),

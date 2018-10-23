@@ -62,9 +62,7 @@ app.use(passport.session());
 
 // Home Route
 app.get('/', (req, res) => {
-	res.render('index', {
-		description: 'This is your feed'
-	});
+	res.render('index');
 });
 
 // Route Files

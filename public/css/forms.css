@@ -1,0 +1,211 @@
+/*****************************/
+/*****************************/
+/*  CONTAINER REGIRTER FORM  */
+/*****************************/
+/*****************************/
+
+
+body{
+  background-color: #F1F1F1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+}
+
+.formwrapper{
+  display:          flex;
+  width:            478px;
+  height:           auto;
+  background-color: #FEFEFE;
+  box-shadow:       4px 2px 4px rgba(134, 134, 134, 0.25);
+
+}
+
+.formwrapperauxiliar{
+  display:          flex;
+  justify-content:  space-between;
+  margin:           64px;
+  flex-direction:   column;
+  height:           calc(100% - 2*64px);
+  width:            calc(100% - 2*64px);
+}
+
+.formfield{
+  height:           2em;
+  margin-bottom:    3em;
+  display:          flex;
+  flex-direction:   column;
+  width:100%;
+}
+
+.inputform{
+  border:           1px solid #91A59B;
+  border-radius:    4px;
+  line-height:      2em;
+  font-size:        0.7em;
+  padding-left:     0.8em;
+  margin-top:       1em;
+  font-family:      'Muli', sans-serif;
+  transition:       border-color 1s ease;
+  transition:       border-width 0.6s linear;
+  color:            #4F4F4F;
+  -webkit-transition: border .2s ease-in-out;
+  -moz-transition:  border .2s ease-in-out;
+  -o-transition:    border .2s ease-in-out;
+}
+
+::placeholder{
+  color:            #91A59B;
+}
+
+.inputform:focus{
+  border:           1.8px solid #4DCE59;
+  outline:          0;
+}
+
+
+
+
+
+
+
+/*  EMAIL  */
+
+
+/*  PASSWORD  */
+
+
+/*  BUTTONS  */
+
+.buttonsdiv{
+  display:          flex;
+  flex-direction:   ltr;
+  justify-content:  space-between;
+  width:            100%;
+  margin-top:       1.5em;
+}
+
+
+
+
+/*  TEXTO - LABELS  */
+.textform{
+  font-family:      'Muli', sans-serif;
+  color:            #91A59B;
+  font-size:        0.5em;
+  font-weight:      700;
+  letter-spacing:   1px;
+}
+
+
+/* BUTTON */
+
+
+.mainbutton{
+  background-color: #009245;
+  color:            white;
+  font-family:      'Muli', sans-serif;
+  font-weight:      400;
+  padding:          0.6em;
+  padding-left:     1em;
+  padding-right:    1em;
+  border:           none;
+  border-radius:    4px;
+  box-shadow:       4px 2px 4px rgba(134, 134, 134, 0.25);
+  min-width:        94px;
+  cursor:           pointer;
+
+}
+
+.secbutton{
+  color:            #009245;
+  font-family:      'Muli', sans-serif;
+  font-weight:      400;
+  padding:          none;
+  border:           none;
+  background:       none;
+  justify-content:  left;
+  cursor:           pointer;
+  padding:          0;
+}
+
+
+
+@media screen and (orientation: portrait) {
+  body {
+      flex-direction: column;
+      width:100%;
+      display: flex;
+      justify-content: center;
+      background-color: #FEFEFE;
+      height:90vh;
+      margin:auto;
+  }
+
+  .formwrapper{
+    box-shadow: none;
+    margin: 2em;
+    display: flex;
+    justify-content: center;
+    width:auto;
+    min-width: 80%;
+
+  }
+
+  .formwrapperauxiliar{
+    position: relative;
+    margin: 0px;
+    width:calc(100% - 2 * 32px );
+  }
+  .formfield{
+    width:auto;
+  }
+
+
+}
+
+
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tags-input {
+    border: 1px solid #333;
+    display: inline-block;
+}
+
+.tags-input .tag {
+    font-size: 85%;
+    padding: 0.5em 0.75em;
+    margin: 0.25em 0.1em;
+    display: inline-block;
+    background-color: #ddd;
+    transition: all 0.1s linear;
+    cursor: pointer;
+}
+
+.tags-input .tag:hover {
+    background-color: #3af;
+    color: white;
+}
+
+.tags-input .tag .close::after {
+    content: '×';
+    font-weight: bold;
+    display: inline-block;
+    transform: scale(1.4);
+    margin-left: 0.75em;
+}
+
+.tags-input .tag .close:hover::after {
+    color: red;
+}
+
+.tags-input .main-input {
+    border: 0;
+    outline: 0;
+    padding: 0.5em 0.1em;
+}

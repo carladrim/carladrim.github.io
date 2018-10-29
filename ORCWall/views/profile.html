@@ -142,14 +142,26 @@
 						</div>
 					</div>
 					<div class="profilenav">
+											<button id="myBtn2">Change Settings</button>
 						<div class="profilenav-item" onclick="SWITCHinfo()">Information</div>
 						<div  class="profilenav-item" onclick="SWITCHresou()">Resources</div>
+					</div>
+				</div>
+
+
+				<div id="myModal2" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+						/* HERE OLA CAIO*/
+
 					</div>
 				</div>
 
 				<!-- PROFILE INFORMATION -->
 
 				<div id="infoU">
+
 				<div class="userinfo-box">
 					<h5 class="userinfo-label">Institution</h5>
 					<h3 class="userinfo-content" contenteditable="false">University of Coimbra</h3>
@@ -170,7 +182,13 @@
 					<h5 class="userinfo-label">Biography</h5>
 					<h3 class="userinfo-content-longer">John Doe was born on June 23, 1852, in Hoboken, New Jersey. In 1938. In 1947, , Inc. In 1948, Kinsey published his first book, Sexual Behavior in the Human Male, followed by a sequel in 1953. On August 25, 1956, Kinsey died in Bloomington, Indiana, from complications caused by congestive heart failure.</h3>
 				</div>
+
+
+
+
 			</div>
+
+
 
 
 
@@ -232,6 +250,34 @@
 								}
 							}
 
+
+							//another Modal
+
+
+							var modal = document.getElementById('myModal2');
+
+							// Get the button that opens the modal
+							var btn = document.getElementById("myBtn2");
+
+							// Get the <span> element that closes the modal
+							var span = document.getElementsByClassName("close")[0];
+
+							// When the user clicks the button, open the modal
+							btn.onclick = function() {
+								modal.style.display = "block";
+							}
+
+							// When the user clicks on <span> (x), close the modal
+							span.onclick = function() {
+								modal.style.display = "none";
+							}
+
+							// When the user clicks anywhere outside of the modal, close it
+							window.onclick = function(event) {
+								if (event.target == modal) {
+										modal.style.display = "none";
+								}
+							}
 
 					//switch tabs
 

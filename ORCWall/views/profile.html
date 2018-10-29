@@ -141,13 +141,14 @@
 						</div>
 					</div>
 					<div class="profilenav">
-						<div class="profilenav-item">Information</div>
-						<div  class="profilenav-item">Bookmarks</div>
+						<div class="profilenav-item" onclick="SWITCHinfo()">Information</div>
+						<div  class="profilenav-item" onclick="SWITCHresou()">Resources</div>
 					</div>
 				</div>
 
 				<!-- PROFILE INFORMATION -->
 
+				<div id="infoU">
 				<div class="userinfo-box">
 					<h5 class="userinfo-label">Institution</h5>
 					<h3 class="userinfo-content" contenteditable="false">University of Coimbra</h3>
@@ -168,6 +169,15 @@
 					<h5 class="userinfo-label">Biography</h5>
 					<h3 class="userinfo-content-longer">John Doe was born on June 23, 1852, in Hoboken, New Jersey. In 1938. In 1947, , Inc. In 1948, Kinsey published his first book, Sexual Behavior in the Human Male, followed by a sequel in 1953. On August 25, 1956, Kinsey died in Bloomington, Indiana, from complications caused by congestive heart failure.</h3>
 				</div>
+			</div>
+
+
+
+				<div class="resources-box" id="resources">
+					<div></div>
+					<h5 class="resources-file">Folder</h5>
+				</div>
+
 
 
 
@@ -186,7 +196,25 @@
 
 
 
+				<script>
 
+
+
+					function SWITCHresou( div1, div2){
+									document.getElementById('infoU').style.display= "none";
+									document.getElementById('resources').style.display= "block";
+
+					}
+
+
+					function SWITCHinfo( div1, div2){
+
+									document.getElementById('resources').style.display= "none";
+									document.getElementById('infoU').style.display= "block";
+						
+					}
+
+				</script>
 
 
 

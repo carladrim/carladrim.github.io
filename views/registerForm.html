@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Register Form</title>
+		<link rel="stylesheet" href="/css/forms.css" type="text/css">
+	</head>
+	<body>
+		<div class="formwrapper">
+			<form class="formwrapperauxiliar" id="idformwrapperauxiliar" method="POST" action="/user/register">
+
+				<div class="formfield">
+					<label class="textform"><b>E-MAIL</b></label>
+					<input class="inputform" id="emailinput" name="email" type="text" placeholder="Enter e-mail" required>
+				</div>
+
+
+				<div style=" flex-direction: row;" class="formfield">
+					<div style="display: flex; width: calc((100% - 2em) / 2); flex-direction: column; margin-right: 2em; ">
+						<label class="textform"><b>PASSWORD</b></label>
+						<input class="inputform" id="passwordinput" name="password" type="password" placeholder="Enter password" required>
+					</div>
+
+					<div style="display: flex; width: calc((100% - 2em) / 2); flex-direction: column; " class="formfield">
+						<label class="textform"><b>REPEAT PASSWORD</b></label>
+						<input class="inputform" id="repeatpasswordinput" name="r_password" type="password" placeholder="Enter same password" required>
+					</div>
+				</div>
+
+
+
+				<div style="margin-bottom: 2em; border: 0;  border-top: 1px solid #91A59B;"> </div>
+
+
+				<div style="width: 100%; flex-direction: row;" class="formfield">
+					<div style="display: flex; width: calc((100% - 2em) / 2); flex-direction: column; margin-right: 2em;">
+						<label class="textform"><b>FIRST NAME</b></label>
+						<input class="inputform" id="firstnameinput" name="first_name" type="text" placeholder="Enter first name" required>
+					</div>
+
+
+
+					<div style="display: flex; width: calc((100% - 2em) / 2) ; flex-direction: column;  " class="formfield">
+						<label class="textform"><b>LAST NAME</b></label>
+						<input class="inputform" id="lastnameinput" name="last_name" type="text" placeholder="Enter last name" required>
+					</div>
+				</div>
+
+
+
+				<div class="buttonsdiv">
+					<button id="createaccountbutton" class="secbutton" type="button" onclick="location.href = '/user/login';">Already have an account?</button>
+					<button id="loginbutton" class="mainbutton" type="submit">Create Account</button>
+				</div>
+
+			</form>
+		</div>
+	</body>
+</html>

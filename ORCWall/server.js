@@ -71,20 +71,6 @@ let user = require('./routes/user');
 app.use('/profile', profile);
 app.use('/user', user);
 
-// Users List Route
-app.get('/users', (req, res) => {
-	User.find({}, (err, users) => {
-		if(err){
-			console.log(err);
-		} else{
-			res.render('users', {
-				title: 'Users',
-				users: users
-			});
-		}
-	});
-});
-
 // Start server
 app.listen(port, () => {
 	console.log(`Server started on port ${port}`);

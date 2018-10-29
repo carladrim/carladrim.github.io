@@ -37,7 +37,6 @@ router.post('/register', [
 	const r_password = req.body.r_password;
 	const first_name = req.body.first_name;
 	const last_name = req.body.last_name;
-	const orcid = req.body.orcid;
 
 	const errors = validationResult(req);
 
@@ -52,8 +51,7 @@ router.post('/register', [
 			email: email,
 			password: password,
 			first_name: first_name,
-			last_name: last_name,
-			orcid: orcid
+			last_name: last_name
 		});
 
 		bcrypt.genSalt(saltRounds, (err, salt) => {
@@ -67,7 +65,7 @@ router.post('/register', [
 						console.log(err);
 						return;
 					} else {
-						res.redirect('/');
+						res.redirect('/user/interests');
 					}
 				});
 			});
@@ -86,6 +84,15 @@ router.post('/login',
 		successRedirect: '/',
 		failureRedirect: '/user/login'
 	})
+);
+
+// Interests Form
+router.get('/interests', (req, res) => {
+	res.render('interests');
+});
+
+// Interests Process
+router.post('/interests',
 );
 
 module.exports = router;

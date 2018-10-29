@@ -18,8 +18,8 @@ let userSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	orcid:{
-		type: Number,
+	hashtags:{
+		type: [String],
 		required: false
 	}
 });

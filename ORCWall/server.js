@@ -69,7 +69,6 @@ app.get('/', (req, res) => {
 	res.render('index');
 });
 
-<<<<<<< HEAD
 // Twitter Route
 app.get('/tweets', (req, res) => {
   Client.get('search/tweets', {q: 'science', count: 20 }, function(error, tweets, response) {
@@ -78,11 +77,6 @@ app.get('/tweets', (req, res) => {
     });
   });
 });
-=======
-//aaaaaaaaaaaaaa
-
-
->>>>>>> 80826585ff16d89a2c5ae8888ebe2253deb43d6a
 
 // Route Files
 let profile = require('./routes/profile');

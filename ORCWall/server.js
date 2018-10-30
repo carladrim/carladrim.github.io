@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const Twitter = require('twitter');
 const config = require('./config/database');
 
 const port = 3000;
@@ -60,9 +61,21 @@ require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Twitter Client Config
+let Client = require('./config/twitter');
+
 // Home Route
 app.get('/', (req, res) => {
 	res.render('index');
+});
+
+// Twitter Route
+app.get('/tweets', (req, res) => {
+  Client.get('search/tweets', {q: 'science', count: 20 }, function(error, tweets, response) {
+    res.render('tweets', {
+      tweets: tweets.statuses
+    });
+  });
 });
 
 // Route Files

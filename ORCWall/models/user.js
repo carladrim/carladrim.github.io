@@ -18,10 +18,10 @@ let userSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	hashtags:{
-		type: [String],
+	hashtags:[{
+		type: String,
 		required: false
-	}
+	}]
 });
 
 const User = module.exports = mongoose.model('User', userSchema);

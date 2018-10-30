@@ -1,0 +1,9 @@
+extends layout
+block content
+	h1 Tweets
+	ul.list-group
+		each tweet, i in tweets
+			li.list-group-item= tweet.user.name
+			li.list-group-item= tweet.created_at
+			li.list-group-item= tweet.text
+			li ----------------------------------------------------------------

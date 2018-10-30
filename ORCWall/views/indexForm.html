@@ -3,13 +3,17 @@
 <head>
 	<title>ORCWall</title>
 	<link rel="stylesheet" href="/css/style.css" type="text/css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="shortcut icon" type="image/png" href="/resources/Images/favicon.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Muli:400,600,700" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
 
 </head>
 <body style="margin: 0px; padding: 0px;">
+
+
 
 	<!--------------------------->
 	<!--------------------------->
@@ -21,12 +25,7 @@
 
 
 	<!-- INSERE BLOCOS NO FEED -->
-	<script type="text/javascript">
-		function addFeedBlock(imagepath)
-		{
-			document.write('<div class="feedBox"  >     <img class="imageOnFeedBlock" src="' + imagepath + '">    </div> ');
-		}
-	</script>
+
 
 
 
@@ -172,13 +171,11 @@
 
 
 				</div>
-				<div class= newscontainer>
+				<div class= 'newscontainer' id="tweetscontainer">
 
-				<script type="text/javascript">
-					for (var i = 0; i < 30; i++){
-						addFeedBlock('/resources/Images/post.png');
-					}
-				</script>
+
+
+
 			</div>
 			</div>
 
@@ -188,6 +185,30 @@
 		</div>
 
 	</div>
+
+<script>
+$.get('../twitter.js', function(list) {
+							 $('#tweetscontainer').html(tws); // show the list
+					 });
+
+
+
+  var div=[];
+div[i]= document.createElement("div");
+div[i].innerHTML= '<img src="' + tws[i].user.profile_image_url +'">'  + '<div> Posted by:' + tws[i].user.name + '</div>' + '<div> Tweeted: ' + tws[i].text + '</div>' ;
+div[i].innerHTML= 'WOERWAEA';
+document.getElementById("tweetscontainer").appendChild( div[i] );
+
+
+
+</script>
+
+
+
+
+
+
+
 
 </body>
 </html>

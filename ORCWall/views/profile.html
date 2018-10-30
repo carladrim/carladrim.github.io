@@ -30,11 +30,7 @@
 
 
 	<!-- INSERE BLOCOS NO FEED -->
-	<script type="text/javascript">
-		function addFeedBlock(imagepath) {
-			document.write('<div class="feedBox"  >     <img class="imageOnFeedBlock" src="' + imagepath + '">    </div> ');
-		}
-	</script>
+
 
 
 	<!---------------------------->
@@ -208,7 +204,7 @@
 
 
 
-				<div class="resources-box" id="resources">
+				<div class="resources-box" id="resourcesx">
 					<div></div>
 
 					<!-- Trigger/Open The Modal -->
@@ -228,11 +224,11 @@
 				    <span class="close">&times;</span>
 				    <p>Insert the link to your resource</p>
 
-						<div style="margin-bottom: 2em">Link: <input name="link"> </div>
+						<div style="margin-bottom: 2em">Link: <input name="link" id="link_input"> </div>
 
-						<div style="margin-bottom: 2em">Hashtags: <input name="tagsLinks"> </div>
+						<div style="margin-bottom: 2em">Hashtags: <input name="tagsLinks" id="tag_input"> </div>
 
-						<div class="mainbutton" style="width:50px">Save</div>
+						<div class="mainbutton" style="width:50px" onclick="TagsFolder()">Save</div>
 
 				  </div>
 				</div>
@@ -270,28 +266,28 @@
 							//another Modal
 
 
-							var modal = document.getElementById('myModal2');
+							var modal2 = document.getElementById('myModal2');
 
 							// Get the button that opens the modal
-							var btn = document.getElementById("myBtn2");
+							var btn2 = document.getElementById("myBtn2");
 
 							// Get the <span> element that closes the modal
-							var span = document.getElementsByClassName("close")[0];
+							var span2 = document.getElementsByClassName("close")[1];
 
 							// When the user clicks the button, open the modal
-							btn.onclick = function() {
-								modal.style.display = "block";
+							btn2.onclick = function() {
+								modal2.style.display = "block";
 							}
 
 							// When the user clicks on <span> (x), close the modal
-							span.onclick = function() {
-								modal.style.display = "none";
+							span2.onclick = function() {
+								modal2.style.display = "none";
 							}
 
 							// When the user clicks anywhere outside of the modal, close it
 							window.onclick = function(event) {
-								if (event.target == modal) {
-										modal.style.display = "none";
+								if (event.target == modal2) {
+										modal2.style.display = "none";
 								}
 							}
 
@@ -311,6 +307,35 @@
 					function createLink(){
 
 					}
+
+
+					function TagsFolder(){
+						var link = document.getElementById('link_input').value;
+						var tag = document.getElementById('tag_input').value;
+
+
+						var local = document.getElementById('resourcesx');
+						var folders = [];
+						var existags= document.getElementsByClassName('folder');
+						var ver = false;
+
+						var newfolder = tag;
+						document.local.innerHTML="<div>OLA!!</div>";
+
+						/*
+						for( var i=0; i < existags.length; i++){
+							if(tag == existags[i]){
+								ver=true;
+							}else{
+								ver= false;
+								existags.push(tag);
+							}
+
+
+						} */
+
+					}
+
 
 
 

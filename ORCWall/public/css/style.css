@@ -618,6 +618,8 @@ div.numbers-container {
 	border-radius: 8px;
 	display:flex;
 	flex-direction: column;
+	padding-top: 1em;
+	font-weight: bold;
 
 	}
 

@@ -336,18 +336,19 @@ var link = document.getElementById('link_input').value;
 var tag = document.getElementById('tag_input').value;
 
 if (ok === true) {
-var div = document.createElement('ul');
+var div = document.createElement('ol');
 var linkable = document.createElement('li');
 
 div.className = 'new-rect';
 div.style.backgroundColor = "#a6ddb0";
-div.style.margin="3em 3em 3em 3em"
-div.style.width="300px"
+div.style.margin="3em 3em 3em 3em";
+div.style.width="300px";
 div.textContent = '#' + tag ;
 
 linkable.className = 'linkable';
-linkable.style.margin="2em 2em 2em  "
-linkable.innerHTML= '<a href=" ' + link + '">' + tag ;
+linkable.style.margin="2em 2em 2em 2em "
+linkable.style.color="#33633d";
+linkable.innerHTML= '<a href=" ' + link + '">' + link ;
 
 div.appendChild(linkable);
 

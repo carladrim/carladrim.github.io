@@ -1,0 +1,96 @@
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose'); // Mongoose NoSQL
+const bodyParser = require('body-parser');
+const flash = require('connect-flash');
+const session = require('express-session');
+const passport = require('passport');
+const Twitter = require('twitter');
+const config = require('./config/database');
+
+const port = 3000;
+
+// DB Connect - Mongoose NoSQL
+mongoose.connect(config.database, {useNewUrlParser: true});
+let db = mongoose.connection;
+
+// Check connection
+db.once('open', () => {
+	console.log('Connected to MongoDB');
+});
+
+// Check for DB errors - Mongoose NoSQL
+db.on('error', err => {
+	console.log(err);
+});
+
+// Init App
+const app = express();
+
+// Bring in Models
+let User = require('./models/user');
+
+// Load View Engine
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+// Body Parser Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+// Set Public Folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Express Session Middleware
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+
+// Express Messages Middleware
+app.use(require('connect-flash')());
+app.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
+
+// Passport Config
+require('./config/passport')(passport);
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Twitter Client Config
+let Client = require('./config/twitter');
+
+// Home Route
+app.get('/', (req, res) => {
+	res.render('index');
+});
+
+<<<<<<< HEAD
+// Twitter Route
+app.get('/tweets', (req, res) => {
+  Client.get('search/tweets', {q: 'science', count: 20 }, function(error, tweets, response) {
+    res.render('tweets', {
+      tweets: tweets.statuses
+    });
+  });
+});
+=======
+//aaaaaaaaaaaaaa
+
+
+>>>>>>> 80826585ff16d89a2c5ae8888ebe2253deb43d6a
+
+// Route Files
+let profile = require('./routes/profile');
+let user = require('./routes/user');
+app.use('/profile', profile);
+app.use('/user', user);
+
+// Start server
+app.listen(port, () => {
+	console.log(`Server started on port ${port}`);
+});

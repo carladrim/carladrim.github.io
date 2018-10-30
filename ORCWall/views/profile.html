@@ -342,10 +342,12 @@ var linkable = document.createElement('li');
 div.className = 'new-rect';
 div.style.backgroundColor = "#a6ddb0";
 div.style.margin="3em 3em 3em 3em"
-div.textContent = tag ;
+div.style.width="300px"
+div.textContent = '#' + tag ;
 
 linkable.className = 'linkable';
-linkable.textContent= link;
+linkable.style.margin="2em 2em 2em  "
+linkable.innerHTML= '<a href=" ' + link + '">' + tag ;
 
 div.appendChild(linkable);
 

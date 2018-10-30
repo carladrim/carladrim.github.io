@@ -3,9 +3,9 @@ require('dotenv').load();
 var Twitter = require('twitter');
 
 var client = new Twitter({
-    consumer_key: process.env.TWITTER_CONSUMER_KEY,
-    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-    bearer_token: process.env.TWITTER_BEARER_TOKEN
+    consumer_key: process.env.TBhUWxUAwvM5eVyc98IHTIpIa,
+    consumer_secret: process.env.2uWzj940TsboeA6bM53zRq4asa2t5i5gvlugOMTBh1ORJO1m6r,
+    bearer_token: process.env.163167121-WtXJVmxKcWNAdqVXiFnzlWXYjUylIisWFWkde5Ln
 });
 
 client.get('search/tweets', {q: '#ios #swift'}, function(error, tweets, response) {

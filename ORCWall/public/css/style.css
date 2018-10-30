@@ -612,3 +612,19 @@ div.numbers-container {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+.new-rect{
+	font-family: 'Muli', sans-serif;
+	font-size: 1.2em;
+	border-radius: 8px;
+	display:flex;
+	flex-direction: column;
+
+	}
+
+.likable{
+		font-family: 'Muli', sans-serif;
+		font-size:0.6em;
+
+}

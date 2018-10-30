@@ -7,23 +7,19 @@ var client = new Twitter({
   access_token_secret: 'nphJUDOo0ozm8Grtqj6fiKIAYcowQa1VgZ2mweu47H1Sf'
 });
 
-
-
+var tws='';
 
 client.get('search/tweets', {q: 'rainbow', count: 3 }, function(error, tweets, response) {
   var tws = tweets.statuses;
-  var div=[];
+
   for(var i=0; i< tws.length; i++){
     console.log(tws[i].user.profile_image_url , tws[i].user.name , tws[i].source , tws[i].created_at , tws[i].text);
-    div[i]= document.createElement("div");
-    div[i].innerHTML= '<img src="' . tws[i].user.profile_image_url .'">';
 
-    document.getElementById("tweetscontainer").appendChild(div);
+
 
 
   }
 // console.log(tweets);
 
-
-
-});
+}
+);

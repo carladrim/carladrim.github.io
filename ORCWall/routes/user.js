@@ -92,7 +92,14 @@ router.get('/interests', (req, res) => {
 });
 
 // Interests Process
-router.post('/interests',
-);
+router.post('/interests', (req, res) => {
+	const tags = req.body.tags.split(/\s+|\u0023+/);
+	while(true){
+		let index = tags.indexOf('');
+		if(index === -1) break;
+		tags.splice(index, 1);
+	}
+	res.redirect('/');
+});
 
 module.exports = router;

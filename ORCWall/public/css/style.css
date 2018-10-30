@@ -318,7 +318,9 @@ body {
 /* 							 */
 
 #profile-bg {
+	position: static;
 	background-color: #F1F1F1;
+	height: 200%;
 }
 
 .main-profile {

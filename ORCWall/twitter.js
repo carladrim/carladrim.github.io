@@ -10,11 +10,20 @@ var client = new Twitter({
 
 
 
-  var stream = client.stream('statuses/filter', {track: 'javascript'});
-  stream.on('data', function(event) {
-    console.log(event && event.text);
-  });
+client.get('search/tweets', {q: 'rainbow', count: 3 }, function(error, tweets, response) {
+  var tws = tweets.statuses;
+  var div=[];
+  for(var i=0; i< tws.length; i++){
+    console.log(tws[i].user.profile_image_url , tws[i].user.name , tws[i].source , tws[i].created_at , tws[i].text);
+    div[i]= document.createElement("div");
+    div[i].innerHTML= '<img src="' . tws[i].user.profile_image_url .'">';
 
-  stream.on('error', function(error) {
-    throw error;
-  });
+    document.getElementById("tweetscontainer").appendChild(div);
+
+
+  }
+// console.log(tweets);
+
+
+
+});

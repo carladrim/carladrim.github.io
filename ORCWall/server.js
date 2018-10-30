@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const mongoose = require('mongoose'); // Mongoose NoSQL 
+const mongoose = require('mongoose'); // Mongoose NoSQL
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -64,6 +64,10 @@ app.use(passport.session());
 app.get('/', (req, res) => {
 	res.render('index');
 });
+
+//aaaaaaaaaaaaaa
+
+
 
 // Route Files
 let profile = require('./routes/profile');

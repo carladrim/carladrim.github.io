@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Teste de Sessions </title>
+</head>
+<body>
+	<h1 style="text-align: center; border-bottom: 1px solid black; margin: auto;">
+		Teste de Sessions
+	</h1>
+
+	
+	<p id="HashtagsParagraph"> Hashtags Selecionadas: </p>
+
+	<script type="text/javascript">
+		mostraHashtag();
+	</script>
+
+
+	<!-- --------------------------------------------------------------------------------- -->
+
+
+
+	<!-- --------------- -->
+	<!-- Clear Sessions  -->
+	<!-- --------------- -->
+	<button onclick="clearSession()">Clear Session</button>
+	<script type="text/javascript">
+
+		function clearSession()
+		{
+			sessionStorage.clear();
+			console.log("Session Cleared");
+			mostraHashtag();
+		}
+	</script>
+
+	<!-- ------------------------------------------- -->
+	<!-- ADD/CRIA VARIAVEL DAS HASHTAGS CASO NÃO EXISTA  -->
+	<!-- ------------------------------------------- -->
+
+	<button onclick="addHashtag()">Add Hashtag</button>
+	<script type="text/javascript">
+
+		function addHashtag(){
+
+			// VERIFICA SE NÃO EXISTE A SESSION VARIABLE
+			if(!sessionStorage.hashtags)
+			{
+				sessionStorage.hashtags="Session(hashtags):";
+			}
+
+
+			var novaHashtag = "hashtag"
+			sessionStorage.hashtags += "|" + novaHashtag + "|";
+
+			mostraHashtag();
+		}
+
+	</script>
+
+	<!-- ---------------------------- -->
+	<!-- APAGA VARIAVEL DAS HASHTAGS  -->
+	<!-- ---------------------------- -->
+
+	<button onclick="deleteAllHashTags()">Delete All Hashtags</button>
+	<script type="text/javascript">
+
+		function deleteAllHashTags(){
+
+			console.log("A tentar apagar a variavel das hashtags...");
+
+			delete sessionStorage.hashtags;
+
+			console.log("Apagou as hashtags...");
+
+			mostraHashtag();
+		}
+
+	</script>
+
+
+
+
+	<!-- ------------------- -->
+	<!-- Mostra as Hashtags  -->
+	<!-- ------------------- -->
+
+	<button onclick="mostraHashtag()">mostra Hashtag</button>
+	<script type="text/javascript">
+
+		function mostraHashtag(){
+			if(!sessionStorage.hashtags)
+			{
+				document.getElementById("HashtagsParagraph").innerHTML = "Hashtags Selecionadas:";
+			}else{
+
+					var aux = [];
+					var hashtagsComp = sessionStorage.hashtags.length;
+					var counter=0;
+
+					console.log("cenas length:" + hashtagsComp);
+				
+					for (var i = 0; i < hashtagsComp; i++)
+					{
+						if(sessionStorage.hashtags[i] == "|")
+						{
+							var stringAux="";
+							counter++;
+							i++;
+							while(sessionStorage.hashtags[i] != "|" && i<hashtagsComp)
+							{
+								stringAux+=sessionStorage.hashtags[i];
+								i++;
+							}
+
+							console.log("Encontrou a hashtag: " + stringAux);
+							aux.push(stringAux);
+							delete stringAux;
+						}
+					}
+
+
+					document.getElementById("HashtagsParagraph").innerHTML = "Hashtags Selecionadas: ";
+					for(var i=0; i<aux.length; i++)
+					{
+						console.log(aux[i] + "_" + i);
+						document.getElementById("HashtagsParagraph").innerHTML += aux[i] + "\t";
+					}
+					
+					
+					delete aux;
+					delete counter;
+					delete hashtagsComp;
+				}
+		}
+
+	</script>
+
+
+
+
+
+
+<!-- -------------------------------------------------- -->
+
+
+	
+
+
+
+
+</body>
+</html>

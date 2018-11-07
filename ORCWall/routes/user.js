@@ -79,12 +79,12 @@ router.get('/login', (req, res) => {
 });
 
 // Login Process
-router.post('/login',
+router.post('/login', (req, res, next) => {
 	passport.authenticate('local', {
 		successRedirect: '/',
 		failureRedirect: '/user/login'
-	})
-);
+	})(req, res, next);
+});
 
 // Interests Form
 router.get('/interests', (req, res) => {
@@ -100,6 +100,12 @@ router.post('/interests', (req, res) => {
 		tags.splice(index, 1);
 	}
 	res.redirect('/');
+});
+
+// Logout
+router.get('/logout', (req, res) =>{
+	req.logout();
+	res.redirect('/user/login');
 });
 
 module.exports = router;

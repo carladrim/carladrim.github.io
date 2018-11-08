@@ -1,2 +1,1 @@
-a vers„o 2.0 do documento de requisitos j· apresenta alguns requisitos em relaÁ„o ‡ sprint 2.
-os mockups ainda n„o est„o atualizados.
+A vers√£o 4.1 do documento de requisitos j√° tem alguma informa√ß√£o para o 3¬∫ sprint, a vermelho es√£o duvidas que s√£o para tirar na pr√≥xima aula pr√°tica

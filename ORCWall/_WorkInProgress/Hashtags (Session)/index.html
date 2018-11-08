@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Teste de Sessions </title>
+</head>
+<body style="display: flex; flex-direction: column; text-align: center;">
+
+	<h1 style="text-align: center; justify-content: center; border-bottom: 1px solid black; margin: auto;">
+		Teste de Sessions
+	</h1>
+
+
+	<form action="javascript:addHashtag()">
+		<input required autocomplete="off" type="text" name="Nova Hashtag" id="textoNovaHashtag">
+		<button type="submit">submit</button>
+	</form>
+
+	
+	<p id="HashtagsParagraph"> Hashtags Selecionadas: </p>
+
+	<script type="text/javascript">
+		mostraHashtag();
+	</script>
+
+
+	<!-- --------------------------------------------------------------------------------- -->
+
+
+
+	<!-- --------------- -->
+	<!-- Clear Sessions  -->
+	<!-- --------------- -->
+	<button style="width: 100px;" onclick="clearSession()">Clear Session</button>
+	<script type="text/javascript">
+
+		function clearSession()
+		{
+			sessionStorage.clear();
+			console.log("Session Cleared");
+			mostraHashtag();
+		}
+	</script>
+
+	<!-- ------------------------------------------- -->
+	<!-- ADD/CRIA VARIAVEL DAS HASHTAGS CASO NÃO EXISTA  -->
+	<!-- ------------------------------------------- -->
+
+	<script type="text/javascript">
+
+		function addHashtag(){
+
+			// VERIFICA SE NÃO EXISTE A SESSION VARIABLE
+			if(!sessionStorage.hashtags)
+			{
+				sessionStorage.hashtags="Session(hashtags):";
+			}
+
+			var novaHashtag = document.getElementById("textoNovaHashtag").value;
+
+
+
+			// CRIA UM ARRAY COM AS HASHTAGS PARA VERIFICAR SE PODE ADICIONAR
+			var counter=0;
+			var aux = [];
+			var hashtagsComp = sessionStorage.hashtags.length;
+		
+			for (var i = 0; i < hashtagsComp; i++)
+			{
+				if(sessionStorage.hashtags[i] == "|")
+				{
+					counter++;
+
+					var stringAux="";
+					i++;
+					while(sessionStorage.hashtags[i] != "|" && i<hashtagsComp)
+					{
+						stringAux+=sessionStorage.hashtags[i];
+						i++;
+					}
+					aux.push(stringAux);
+					delete stringAux;
+				}
+			}
+
+
+			console.log("########################");			
+
+			// VERIFICA SE A HASHTAG JÁ EXISTE
+
+			var jaExiste=false;
+			for (var i=0; i<counter ;i++)
+			{
+
+				console.log("teste: " + novaHashtag + " vs " + aux[i]);
+
+				if(aux[i]===novaHashtag)
+				{
+					jaExiste = true;
+					break;
+				}
+			}
+
+			// DEPOIS DE VERIFICAR SE EXISTE DECIDE SE ADICIONA OU NÃO
+			if(jaExiste == true)
+			{
+				alert('A hashtag ja Existe!');
+			}
+			else
+			{
+				document.getElementById("textoNovaHashtag").value = "";
+				sessionStorage.hashtags += "|" + novaHashtag + "|";
+			}
+
+			console.log("########################");
+
+			delete aux;
+			delete counter;
+			delete hashtagsComp;
+			delete novaHashtag;
+
+			// ATUALIZA A STRING DAS HASHTAGS
+			mostraHashtag();
+		}
+
+	</script>
+
+	<!-- ---------------------------- -->
+	<!-- APAGA VARIAVEL DAS HASHTAGS  -->
+	<!-- ---------------------------- -->
+
+	<button style="width: 100px;" onclick="deleteAllHashTags()">Delete All Hashtags</button>
+	<script type="text/javascript">
+
+		function deleteAllHashTags(){
+
+			delete sessionStorage.hashtags;
+			mostraHashtag();
+		}
+
+	</script>
+
+
+
+
+	<!-- ------------------- -->
+	<!-- Mostra as Hashtags  -->
+	<!-- ------------------- -->
+
+<!--
+	<button onclick="mostraHashtag()">mostra Hashtag</button>
+-->
+
+	<script type="text/javascript">
+
+		function mostraHashtag(){
+			if(!sessionStorage.hashtags)
+			{
+				document.getElementById("HashtagsParagraph").innerHTML = "Hashtags Selecionadas:";
+			}else{
+
+					var aux = [];
+					var hashtagsComp = sessionStorage.hashtags.length;
+				
+					for (var i = 0; i < hashtagsComp; i++)
+					{
+						if(sessionStorage.hashtags[i] == "|")
+						{
+							var stringAux="";
+							i++;
+							while(sessionStorage.hashtags[i] != "|" && i<hashtagsComp)
+							{
+								stringAux+=sessionStorage.hashtags[i];
+								i++;
+							}
+
+							aux.push(stringAux);
+							delete stringAux;
+						}
+					}
+
+
+					document.getElementById("HashtagsParagraph").innerHTML = "Hashtags Selecionadas: ";
+					for(var i=0; i<aux.length; i++)
+					{
+						document.getElementById("HashtagsParagraph").innerHTML += aux[i] + "\t";
+					}
+					
+					
+					delete aux;
+					delete counter;
+					delete hashtagsComp;
+				}
+		}
+
+	</script>
+
+
+
+	<!-- ---------------------------- -->
+	<!-- Remover apenas uma Hashtags  -->
+	<!-- ---------------------------- -->
+
+
+	<form action="javascript:removeHashtag()">
+		<input required autocomplete="off" type="text" name="removeHashtagInputField" id="textoremoveHashtag">
+		<button type="submit">submit</button>
+	</form>
+
+
+	<script type="text/javascript">
+		function removeHashtag()
+		{
+			//VERIFICA SE A VARIAVEL SESSION EXISTE
+			if(sessionStorage.hashtags)
+			{
+				// CRIA UM ARRAY COM AS HASHTAGS
+				var counter=0;
+				var aux = [];
+				var hashtagsComp = sessionStorage.hashtags.length;
+			
+				for (var i = 0; i < hashtagsComp; i++)
+				{
+					if(sessionStorage.hashtags[i] == "|")
+					{
+						counter++;
+
+						var stringAux="";
+						i++;
+						while(sessionStorage.hashtags[i] != "|" && i<hashtagsComp)
+						{
+							stringAux+=sessionStorage.hashtags[i];
+							i++;
+						}
+						aux.push(stringAux);
+						delete stringAux;
+					}
+				}
+
+				var varDeleteHashtag = document.getElementById("textoremoveHashtag").value;
+
+
+				for(var i=0; i<counter; i++)
+				{
+					if(aux[i]==varDeleteHashtag)
+					{
+						aux.splice(i,1);
+					}
+				}
+				console.log(aux);
+
+
+				// REFAZ A SESSION STORAGE
+				sessionStorage.hashtags="Session(hashtags):";
+				for(var i=0; i<aux.length; i++)
+				{
+					sessionStorage.hashtags += "|" + aux[i] + "|";
+				}
+
+
+			}
+
+			document.getElementById("textoremoveHashtag").value = "";
+
+
+			// ATUALIZA A STRING DAS HASHTAGS
+			mostraHashtag();
+			
+		}
+	</script>
+
+
+<!-- -------------------------------------------------- -->
+
+
+	
+
+
+
+
+</body>
+</html>

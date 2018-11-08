@@ -3,10 +3,17 @@
 <head>
 	<title> Teste de Sessions </title>
 </head>
-<body>
-	<h1 style="text-align: center; border-bottom: 1px solid black; margin: auto;">
+<body style="display: flex; flex-direction: column; text-align: center;">
+
+	<h1 style="text-align: center; justify-content: center; border-bottom: 1px solid black; margin: auto;">
 		Teste de Sessions
 	</h1>
+
+
+	<form action="javascript:addHashtag()">
+		<input required autocomplete="off" type="text" name="Nova Hashtag" id="textoNovaHashtag">
+		<button type="submit">submit</button>
+	</form>
 
 	
 	<p id="HashtagsParagraph"> Hashtags Selecionadas: </p>
@@ -23,7 +30,7 @@
 	<!-- --------------- -->
 	<!-- Clear Sessions  -->
 	<!-- --------------- -->
-	<button onclick="clearSession()">Clear Session</button>
+	<button style="width: 100px;" onclick="clearSession()">Clear Session</button>
 	<script type="text/javascript">
 
 		function clearSession()
@@ -38,7 +45,6 @@
 	<!-- ADD/CRIA VARIAVEL DAS HASHTAGS CASO NÃO EXISTA  -->
 	<!-- ------------------------------------------- -->
 
-	<button onclick="addHashtag()">Add Hashtag</button>
 	<script type="text/javascript">
 
 		function addHashtag(){
@@ -49,10 +55,70 @@
 				sessionStorage.hashtags="Session(hashtags):";
 			}
 
+			var novaHashtag = document.getElementById("textoNovaHashtag").value;
 
-			var novaHashtag = "hashtag"
-			sessionStorage.hashtags += "|" + novaHashtag + "|";
 
+
+			// CRIA UM ARRAY COM AS HASHTAGS PARA VERIFICAR SE PODE ADICIONAR
+			var counter=0;
+			var aux = [];
+			var hashtagsComp = sessionStorage.hashtags.length;
+		
+			for (var i = 0; i < hashtagsComp; i++)
+			{
+				if(sessionStorage.hashtags[i] == "|")
+				{
+					counter++;
+
+					var stringAux="";
+					i++;
+					while(sessionStorage.hashtags[i] != "|" && i<hashtagsComp)
+					{
+						stringAux+=sessionStorage.hashtags[i];
+						i++;
+					}
+					aux.push(stringAux);
+					delete stringAux;
+				}
+			}
+
+
+			console.log("########################");			
+
+			// VERIFICA SE A HASHTAG JÁ EXISTE
+
+			var jaExiste=false;
+			for (var i=0; i<counter ;i++)
+			{
+
+				console.log("teste: " + novaHashtag + " vs " + aux[i]);
+
+				if(aux[i]===novaHashtag)
+				{
+					jaExiste = true;
+					break;
+				}
+			}
+
+			// DEPOIS DE VERIFICAR SE EXISTE DECIDE SE ADICIONA OU NÃO
+			if(jaExiste == true)
+			{
+				alert('A hashtag ja Existe!');
+			}
+			else
+			{
+				document.getElementById("textoNovaHashtag").value = "";
+				sessionStorage.hashtags += "|" + novaHashtag + "|";
+			}
+
+			console.log("########################");
+
+			delete aux;
+			delete counter;
+			delete hashtagsComp;
+			delete novaHashtag;
+
+			// ATUALIZA A STRING DAS HASHTAGS
 			mostraHashtag();
 		}
 
@@ -62,17 +128,12 @@
 	<!-- APAGA VARIAVEL DAS HASHTAGS  -->
 	<!-- ---------------------------- -->
 
-	<button onclick="deleteAllHashTags()">Delete All Hashtags</button>
+	<button style="width: 100px;" onclick="deleteAllHashTags()">Delete All Hashtags</button>
 	<script type="text/javascript">
 
 		function deleteAllHashTags(){
 
-			console.log("A tentar apagar a variavel das hashtags...");
-
 			delete sessionStorage.hashtags;
-
-			console.log("Apagou as hashtags...");
-
 			mostraHashtag();
 		}
 
@@ -85,7 +146,10 @@
 	<!-- Mostra as Hashtags  -->
 	<!-- ------------------- -->
 
+<!--
 	<button onclick="mostraHashtag()">mostra Hashtag</button>
+-->
+
 	<script type="text/javascript">
 
 		function mostraHashtag(){
@@ -96,16 +160,12 @@
 
 					var aux = [];
 					var hashtagsComp = sessionStorage.hashtags.length;
-					var counter=0;
-
-					console.log("cenas length:" + hashtagsComp);
 				
 					for (var i = 0; i < hashtagsComp; i++)
 					{
 						if(sessionStorage.hashtags[i] == "|")
 						{
 							var stringAux="";
-							counter++;
 							i++;
 							while(sessionStorage.hashtags[i] != "|" && i<hashtagsComp)
 							{
@@ -113,7 +173,6 @@
 								i++;
 							}
 
-							console.log("Encontrou a hashtag: " + stringAux);
 							aux.push(stringAux);
 							delete stringAux;
 						}
@@ -123,7 +182,6 @@
 					document.getElementById("HashtagsParagraph").innerHTML = "Hashtags Selecionadas: ";
 					for(var i=0; i<aux.length; i++)
 					{
-						console.log(aux[i] + "_" + i);
 						document.getElementById("HashtagsParagraph").innerHTML += aux[i] + "\t";
 					}
 					

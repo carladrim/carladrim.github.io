@@ -103,9 +103,15 @@ router.post('/interests', (req, res) => {
 });
 
 // Logout
-router.get('/logout', (req, res) =>{
+router.get('/logout', ensureAuthenticated, (req, res) =>{
 	req.logout();
 	res.redirect('/user/login');
 });
+
+// Access Control
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenticated()) return next();
+  else res.redirect('/user/login');
+}
 
 module.exports = router;

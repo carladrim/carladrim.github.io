@@ -70,7 +70,7 @@ app.get('*', (req, res, next) => {
 let Client = require('./config/twitter');
 
 // Home Route
-app.get('/', (req, res) => {
+app.get('/', ensureAuthenticated, (req, res) => {
 	res.render('index');
 });
 
@@ -88,6 +88,12 @@ let profile = require('./routes/profile');
 let user = require('./routes/user');
 app.use('/profile', profile);
 app.use('/user', user);
+
+// Access Control
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenticated()) return next();
+  else res.redirect('/user/login');
+}
 
 // Start server
 app.listen(port, () => {

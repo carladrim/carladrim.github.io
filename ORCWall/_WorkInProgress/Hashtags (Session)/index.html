@@ -196,7 +196,77 @@
 
 
 
+	<!-- ---------------------------- -->
+	<!-- Remover apenas uma Hashtags  -->
+	<!-- ---------------------------- -->
 
+
+	<form action="javascript:removeHashtag()">
+		<input required autocomplete="off" type="text" name="removeHashtagInputField" id="textoremoveHashtag">
+		<button type="submit">submit</button>
+	</form>
+
+
+	<script type="text/javascript">
+		function removeHashtag()
+		{
+			//VERIFICA SE A VARIAVEL SESSION EXISTE
+			if(sessionStorage.hashtags)
+			{
+				// CRIA UM ARRAY COM AS HASHTAGS
+				var counter=0;
+				var aux = [];
+				var hashtagsComp = sessionStorage.hashtags.length;
+			
+				for (var i = 0; i < hashtagsComp; i++)
+				{
+					if(sessionStorage.hashtags[i] == "|")
+					{
+						counter++;
+
+						var stringAux="";
+						i++;
+						while(sessionStorage.hashtags[i] != "|" && i<hashtagsComp)
+						{
+							stringAux+=sessionStorage.hashtags[i];
+							i++;
+						}
+						aux.push(stringAux);
+						delete stringAux;
+					}
+				}
+
+				var varDeleteHashtag = document.getElementById("textoremoveHashtag").value;
+
+
+				for(var i=0; i<counter; i++)
+				{
+					if(aux[i]==varDeleteHashtag)
+					{
+						aux.splice(i,1);
+					}
+				}
+				console.log(aux);
+
+
+				// REFAZ A SESSION STORAGE
+				sessionStorage.hashtags="Session(hashtags):";
+				for(var i=0; i<aux.length; i++)
+				{
+					sessionStorage.hashtags += "|" + aux[i] + "|";
+				}
+
+
+			}
+
+			document.getElementById("textoremoveHashtag").value = "";
+
+
+			// ATUALIZA A STRING DAS HASHTAGS
+			mostraHashtag();
+			
+		}
+	</script>
 
 
 <!-- -------------------------------------------------- -->

@@ -9,5 +9,5 @@ Os artefactos e a produtos feitos encontram-se nas pastas organizadas por unidad
   -Testes > 
   
 Todos os artefactos deverão ter uma desginação única que segue a seguinte norma:
-ES2018_PL6_ORCWALL_(equipa que produziu o artefacto abreviada)_(nome do documento abreviado)_(versão)
+ES2018_PL6_ORCWALL _ (equipa que produziu o artefacto abreviada) _ (nome do documento abreviado)_ (versão)
 

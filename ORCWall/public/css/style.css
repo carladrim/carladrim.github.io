@@ -173,7 +173,7 @@ html {
 .childcontainer {
   display: flex;
   width: 100%;
-  height: auto;
+  height: 100%;
   position: absolute;
 }
 
@@ -615,15 +615,49 @@ textarea {
 
 /* RESOURCES */
 
+.resources-outer {
+  width: 70%;
+  background-color: #EEE;
+  margin: auto;
+  height: 100%;
+}
+
 .resources-table {
   font-family: "Muli", sans-serif;
   margin: auto;
   margin-top: 7em;
+  border-collapse: collapse;
+}
+
+.table-divider {
+  height: 1em;
 }
 
 td,
 th {
   height: 3em;
-  width: 30%;
+  width: 9em;
   text-align: left;
+  color: #777;
+}
+
+th {
+  border-bottom: solid 1px #AAA;
+  color: #888;
+}
+
+.res-button {
+  background-color: #009245;
+  color: white;
+  font-family: "Muli", sans-serif;
+  font-weight: 400;
+  padding: 0.6em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 4px 2px 4px rgba(134, 134, 134, 0.25);
+  cursor: pointer;
+  text-align: center;
+  margin-top: 2em;
 }

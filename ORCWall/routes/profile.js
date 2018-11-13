@@ -6,12 +6,17 @@ let User = require('../models/user');
 
 // Profile Route
 router.get('/', ensureAuthenticated, (req, res) => {
-	res.render('profile');
+  res.render('profile');
+});
+
+// Resources Route
+router.get('/resources', (req, res) => {
+  res.render('resources');
 });
 
 // Access Control
-function ensureAuthenticated(req, res, next){
-  if(req.isAuthenticated()) return next();
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) return next();
   else res.redirect('/user/login');
 }
 

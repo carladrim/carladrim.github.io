@@ -679,3 +679,16 @@ td.wider {
 #resourcesx {
   display: none;
 }
+
+
+
+/* --------   TWEETS ------ */
+
+
+.twcont{
+  width: 500px;
+  height:auto;
+  background-color: white;
+  border-radius: 8px;
+  margin: 3em;
+}

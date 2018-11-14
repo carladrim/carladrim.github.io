@@ -107,3 +107,24 @@ head
         .options
           .mainbutton(style='text-align:center;') New Post
       #tweetscontainer.newscontainer
+      
+      script.
+      
+          var container = document.getElementById('tweetscontainer'); 
+          
+          for( var i=0; i < 10 ; i++){
+            var div = document.createElement('ol');
+            var novaDiv = document.createElement('div') ; 
+            novaDiv.classList.add('twcont');
+            novaDiv.innerHTML="<a></a>";
+            document.getElementById("tweetscontainer").appendChild(novaDiv);
+          
+          }
+          var numberTweets = tweets.lenght;
+          
+          
+      
+          
+      
+  
+      

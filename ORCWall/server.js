@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const mongoose = require('mongoose'); // Mongoose NoSQL 
+const mongoose = require('mongoose'); // Mongoose NoSQL
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
@@ -85,6 +85,16 @@ app.get('/tweets', (req, res) => {
     });
   });
 });
+
+app.get('/index', (req, res) => {
+  Client.get('search/tweets', {q: '#spacex', count: 20 }, function(error, tweets, response) {
+    res.render('index', {
+      tweets: tweets.statuses
+    });
+  });
+});
+
+
 
 // Route Files
 let profile = require('./routes/profile');

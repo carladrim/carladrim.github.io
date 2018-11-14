@@ -249,7 +249,7 @@ html {
   margin-top: 4.5em;
   background-color: #f1f1f1;
   justify-content: center;
-  height: 100%;
+  
   width: calc(100% - 220px);
 }
 .newscontainer {

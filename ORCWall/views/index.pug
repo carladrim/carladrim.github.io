@@ -116,8 +116,16 @@ head
             var div = document.createElement('ol');
             var novaDiv = document.createElement('div') ; 
             novaDiv.classList.add('twcont');
-            novaDiv.innerHTML="<a></a>";
+            var fototw = document.createElement('img');
+            var nometw = document.createElement('div');
+              nometw.textContent= "1111";
+            var datatw = document.createElement('div');
+            var texttw = document.createElement('div');
             document.getElementById("tweetscontainer").appendChild(novaDiv);
+            novaDiv.appendChild(fototw);
+            novaDiv.appendChild(nometw);
+            novaDiv.appendChild(datatw);
+            novaDiv.appendChild(texttw);
           
           }
           var numberTweets = tweets.lenght;

@@ -139,9 +139,64 @@ head
           h3.userinfo-content-longer
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       #resourcesx.resources-box
-        div
-        // Trigger/Open The Modal
-        button#myBtn Add Resource
+        .resources-outer
+          table.resources-table
+            tr.heading
+              th Hashtags
+              th
+              th Referenced
+              th Last Update
+            tr
+              td.table-divider
+            tr
+              td #Microsoft
+              td
+              td 20
+              td Yesterday
+            tr
+              td #Twitter
+              td
+              td 13
+              td 3 hours ago
+            tr
+              td #Bootstrap
+              td
+              td 4
+              td Yesterday
+            tr
+              td #HTTPS
+              td
+              td 9
+              td Last week
+            tr
+              td
+                button#add-hashtag.res-button +
+          table.resources-table
+            tr.heading
+              th Links
+              th.wider URL
+              th Last Update
+            tr
+              td Twitter
+              td.wider https://twitter.com/
+              td Yesterday
+            tr
+              td R-Network
+              td.wider http://www.researchers.net/
+              td 3 hours ago
+            tr
+              td NatGeo
+              td.wider http://natgeo.com/
+              td Yesterday
+            tr
+              td Hubble PES
+              td.wider https://hubble.nasa.gov/
+              td Last week
+            tr
+              td
+                //Trigger/Open the Modal
+                button#myBtn.res-button +
+                
       // The Modal
       #myModal.modal
         // Modal content

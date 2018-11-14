@@ -65,7 +65,10 @@ router.post('/register', [
 						console.log(err);
 						return;
 					} else {
-						res.redirect('/user/interests');
+						passport.authenticate('local', {
+							successRedirect: '/user/interests',
+							failureRedirect: '/user/login'
+						})(req, res);
 					}
 				});
 			});
@@ -88,6 +91,7 @@ router.post('/login', (req, res, next) => {
 
 // Interests Form
 router.get('/interests', (req, res) => {
+	console.log(req.user);
 	res.render('interests');
 });
 

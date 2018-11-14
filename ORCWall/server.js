@@ -71,9 +71,12 @@ let Client = require('./config/twitter');
 
 // Home Route
 app.get('/', ensureAuthenticated, (req, res) => {
-	res.render('index', {
-    first_name: req.user.first_name,
-    last_name: req.user.last_name
+  Client.get('search/tweets', {q: '#spacex', count: 20 }, function(error, tweets, response) {
+	 res.render('index', {
+      first_name: req.user.first_name,
+      last_name: req.user.last_name,
+      tweets: tweets.statuses
+    });
   });
 });
 

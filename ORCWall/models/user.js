@@ -28,7 +28,7 @@ let userSchema = mongoose.Schema({
 	},
 	profession:{
 		type: String,
-		default: "..."
+		default: ""
 	},
 	biography:{
 		type: String,

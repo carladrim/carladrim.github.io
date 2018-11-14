@@ -92,36 +92,28 @@ head
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Last Name:
             br
-            input(type='text', name='activesince', value=user.last_name)
-            br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Password:
-            br
-            input(type='password', name='activesince', value='')
-            br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Repeat Password:
-            br
-            input(type='password', name='activesince', value='')
+            input(type='text', name='last_name', value=user.last_name)
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Job Title:
             br
-            input(type='text', name='activesince', value=user.profession)
+            input(type='text', name='profession', value=user.profession)
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;E-Mail:
             br
-            input(type='text', name='institution', value=user.email)
+            input(type='text', name='email', value=user.email)
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Studied At:
             br
-            input(type='text', name='occupation', value=user.school)
+            input(type='text', name='school', value=user.school)
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Works On:
             br
-            input(type='text', name='field', value=user.workplace)
+            input(type='text', name='workplace', value=user.workplace)
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Biography:
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&ZeroWidthSpace;
-            textarea#bio(name='bio', rows='2', cols='40')
+            textarea#bio(name='biography', rows='2', cols='40')
               | #{user.biography}
             br
             br

@@ -18,6 +18,22 @@ let userSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
+	school:{
+		type: String,
+		default: "..."
+	},
+	workplace:{
+		type: String,
+		default: "..."
+	},
+	profession:{
+		type: String,
+		default: "..."
+	},
+	biography:{
+		type: String,
+		default: "..."
+	},
 	hashtags:[{
 		type: String,
 		required: false

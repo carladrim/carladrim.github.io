@@ -76,7 +76,7 @@ head
         .userimagewrapper
           img.userimage(src='/resources/Images/user.png')
           .userinfo
-            h1.userdisplayname #{first_name} #{last_name}
+            h1.userdisplayname #{user.first_name} #{user.last_name}
             h5.userbio Bioengineering Professor
         .profilenav
           button#myBtn2 Edit Profile
@@ -124,20 +124,20 @@ head
       #infoU
         .userinfo-box
           h5.userinfo-label E-Mail
-          h3.userinfo-content(contenteditable='false') jdoe@orcwall.com
+          h3.userinfo-content(contenteditable='false') #{user.email}
         .userinfo-box
           h5.userinfo-label Studied At
-          h3.userinfo-content University of Coimbra
+          h3.userinfo-content #{user.school}
         .userinfo-box
           h5.userinfo-label Works On
-          h3.userinfo-content University of Coimbra
+          h3.userinfo-content #{user.workplace}
         .userinfo-box
           h5.userinfo-label Job Title
-          h3.userinfo-content Student
+          h3.userinfo-content #{user.profession}
         .userinfo-box
           h5.userinfo-label Biography
           h3.userinfo-content-longer
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            | #{user.biography}
       #resourcesx.resources-box
         .resources-outer
           table.resources-table

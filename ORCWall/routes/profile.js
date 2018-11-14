@@ -7,8 +7,7 @@ let User = require('../models/user');
 // Profile Route
 router.get('/', ensureAuthenticated, (req, res) => {
   res.render('profile', {
-  	first_name: req.user.first_name,
-  	last_name: req.user.last_name
+  	user: req.user
   });
 });
 

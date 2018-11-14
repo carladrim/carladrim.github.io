@@ -89,16 +89,6 @@ app.get('/tweets', (req, res) => {
   });
 });
 
-app.get('/index', (req, res) => {
-  Client.get('search/tweets', {q: '#spacex', count: 20 }, function(error, tweets, response) {
-    res.render('index', {
-      tweets: tweets.statuses
-    });
-  });
-});
-
-
-
 // Route Files
 let profile = require('./routes/profile');
 let user = require('./routes/user');

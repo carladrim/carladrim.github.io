@@ -18,6 +18,10 @@ let userSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
+	photo_url:{
+		type: String,
+		default: "..."
+	},
 	school:{
 		type: String,
 		default: "..."
@@ -34,11 +38,9 @@ let userSchema = mongoose.Schema({
 		type: String,
 		default: "..."
 	},
-	picture_path:{
-		type: String
-	},
 	hashtags:[{
-		type: String
+		type: String,
+		required: false
 	}]
 });
 

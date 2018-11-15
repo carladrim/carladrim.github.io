@@ -7,12 +7,12 @@
 	</head>
 	<body>
 		<div class="formwrapper">
-			<form class="formwrapperauxiliar" id="idformwrapperauxiliar" method="POST" action="/user/interests">
+			<form class="formwrapperauxiliar" id="idformwrapperauxiliar" method="POST" action="/user/interests" enctype="multipart/form-data">
 
 				<div class="formfield">
 					<label class="textform"><b>CHOOSE YOUR PROFILE PHOTO</b></label>
 
-					<input  type="file" onchange="onFileSelected(event)">
+					<input  type="file" name='image'>
 				</div>
 
 
@@ -29,7 +29,7 @@
 
 
 				<div class="buttonsdiv">
-					<button id="createaccountbutton" class="secbutton" type="button" onclick="location.href = '/';">Skip this</button>
+					<button id="createaccountbutton" class="secbutton" type="button" onclick="location.href = '/user/login';">Skip this</button>
 					<button id="loginbutton" class="mainbutton" type="submit">Save</button>
 				</div>
 

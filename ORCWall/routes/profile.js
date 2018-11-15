@@ -9,7 +9,8 @@ let User = require('../models/user');
 router.get('/', ensureAuthenticated, (req, res) => {
  console.log(req.user.profession);
  res.render('profile', {
-  	user: req.user
+	  user: req.user,
+	  pic_url: req.user.photo_url
   });
 });
 

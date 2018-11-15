@@ -36,7 +36,7 @@ let userSchema = mongoose.Schema({
 	},
 	picture_path:{
 		type: String
-	}
+	},
 	hashtags:[{
 		type: String
 	}]

@@ -39,6 +39,7 @@ router.post('/edit', [
 		for (let obj of errors.array())
 			console.log(obj.msg);
 		res.render('profile', {
+			user: req.user,
 			errors: errors
 		});
 	} else {

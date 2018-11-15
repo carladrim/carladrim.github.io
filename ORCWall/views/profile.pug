@@ -85,7 +85,7 @@ head
       #myModal2.modal
         // Modal content
         .modal-content
-          form.profileedit(action='')
+          form.profileedit(method='POST', action='/profile/edit')
             | First Name:
             br
             input(type='text', name='first_name', value=user.first_name)

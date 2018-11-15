@@ -1,14 +1,60 @@
 const express = require('express');
 const router = express.Router();
+const { check, validationResult } = require('express-validator/check');
 
 // Bring in User Model
 let User = require('../models/user');
 
 // Profile Route
 router.get('/', ensureAuthenticated, (req, res) => {
-  res.render('profile', {
+ console.log(req.user.profession);
+ res.render('profile', {
   	user: req.user
   });
+});
+
+// Profile Edit Process
+router.post('/edit', [
+
+	check('email', 'Email is Required').not().isEmpty(),
+	check('email', 'Email is not Valid').isEmail(),
+	check('first_name', 'First Name is Required').not().isEmpty(),
+	check('first_name', 'First Name can\'t contain Numbers').not().matches(/\d/),
+	check('last_name', 'Last Name is Required').not().isEmpty(),
+	check('last_name', 'Last Name can\'t contain Numbers').not().matches(/\d/)
+
+], (req, res) => {
+	let user = {};
+	user.email = req.body.email;
+	user.first_name = req.body.first_name;
+	user.last_name = req.body.last_name;
+	user.school = req.body.school;
+	user.workplace = req.body.workplace;
+	user.profession = req.body.profession;
+	user.biography = req.body.biography;
+
+	const errors = validationResult(req);
+
+	if(!errors.isEmpty()) {
+		for (let obj of errors.array())
+			console.log(obj.msg);
+		res.render('profile', {
+			errors: errors
+		});
+	} else {
+
+		let query = {_id: req.user.id};
+
+		User.updateOne(query, user, err => {
+			console.log();
+			if(err){
+				console.log(err);
+				return;
+			} else {
+				res.redirect('/profile');
+			}
+		});
+	}
 });
 
 // Resources Route

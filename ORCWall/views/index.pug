@@ -116,16 +116,57 @@ head
             var div = document.createElement('ol');
             var novaDiv = document.createElement('div') ; 
             novaDiv.classList.add('twcont');
+            
+            var column = document.createElement('div');
+            column.classList.add('columntw');
+            
+            var groupA = document.createElement('div');
+            groupA.classList.add('groupA');
+            var groupB = document.createElement('div');
+            groupB.classList.add('groupB');
+            
             var fototw = document.createElement('img');
+              fototw.src="/resources/Logo/logosmall.svg"; // PATH FOR THE PHOTO URL
+              fototw.classList.add('twphoto');
+              
             var nometw = document.createElement('div');
-              nometw.textContent= "1111";
+              nometw.textContent= "Ben Shapiro";  //TWITTER AUTHOR
+              nometw.classList.add('twnome');
+            
+            var usertagtw = document.createElement('div');
+              usertagtw.textContent  = "@sh4p1r0";   //TWEET USER TAG
+              usertagtw.classList.add('twutag');
+              
             var datatw = document.createElement('div');
+              datatw.textContent = "30 Oct 2018";    //TWEET DATE
+              datatw.classList.add('twdata');
+              
+              
             var texttw = document.createElement('div');
-            document.getElementById("tweetscontainer").appendChild(novaDiv);
+              texttw.textContent  = "One Ben Shapiro to rule them all";   //TWEET TEXT
+              texttw.classList.add('twtext');
+              
+            var linktw = document.createElement('a');
+              linktw.href  = "#";   //TWEET LINK
+                linktw.classList.add('twlink');
+              
+            document.getElementById("tweetscontainer").appendChild(linktw);
+            
             novaDiv.appendChild(fototw);
-            novaDiv.appendChild(nometw);
-            novaDiv.appendChild(datatw);
-            novaDiv.appendChild(texttw);
+            groupA.appendChild(nometw);
+            groupA.appendChild(usertagtw);
+            
+            column.appendChild(groupA);
+            column.appendChild(groupB);
+            
+            groupB.appendChild(texttw);
+            groupB.appendChild(datatw);
+            
+        
+            novaDiv.appendChild(column);
+            linktw.appendChild(novaDiv);
+            
+          
           
           }
           var numberTweets = tweets.lenght;

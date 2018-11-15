@@ -249,7 +249,7 @@ html {
   margin-top: 4.5em;
   background-color: #f1f1f1;
   justify-content: center;
-  
+
   width: calc(100% - 220px);
 }
 .newscontainer {
@@ -686,9 +686,74 @@ td.wider {
 
 
 .twcont{
-  width: 500px;
+  text-decoration: none;
+  width: 700px;
   height:auto;
   background-color: white;
   border-radius: 8px;
-  margin: 3em;
+  margin: 2em;
+  border-right: solid 10px;
+  border-color: #4286f4;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Muli', sans-serif;
+}
+
+
+.columntw{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width:100%;
+  margin-left: 1em;
+}
+.groupA{
+  display:flex;
+  flex-direction: row;
+  position:relative;
+  width:100%;
+  align-items: center;
+
+}
+.groupA{
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  align-items: center;
+
+}
+
+.twphoto{
+  width:3em;
+  border-radius: 50%;
+  margin:1em;
+}
+
+.twnome{
+  margin-left: 0em;
+
+  color: #4286f4;
+  font-size: 0.8em;
+}
+
+.twdata{
+  font-size: 0.6em;
+  color: grey;
+  margin-top: 1em;
+}
+.twutag{
+
+  color: darkgray;
+  margin-left: 0.5em;
+  font-size: 0.8em;
+}
+.twtext{
+  color: black;
+  font-size: 1em;
+  margin-top:0.5em;
+}
+.twlink{
+  text-decoration: none;
 }

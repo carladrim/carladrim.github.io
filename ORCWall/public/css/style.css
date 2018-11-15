@@ -748,7 +748,8 @@ td.wider {
   align-items: center;
 }
 .twphoto{
-  width:3em;
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
   margin:1em;
 }

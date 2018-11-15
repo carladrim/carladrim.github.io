@@ -57,7 +57,7 @@ head
         .textnav(onclick="location.href = '/profile';") #{user.first_name} #{user.last_name} 
       .nav_icon
         a(href='/profile')
-          img(src='/resources/Images/profilePicIcon.png')
+          img(src=pic_url+'', style='width: 2em; border-radius: 50%;')
       .nav_icon
         a(href='/user/logout')
           svg(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewbox='0 0 24 24')
@@ -74,7 +74,7 @@ head
       // TOP BANNER
       #userpanel.userpanel
         .userimagewrapper
-          img.userimage(src='/resources/Images/user.png')
+          img.userimage(src=pic_url+'')
           .userinfo
             h1.userdisplayname #{user.first_name} #{user.last_name}
             h5.userbio #{user.profession}

@@ -7,12 +7,12 @@
 	</head>
 	<body>
 		<div class="formwrapper">
-			<form class="formwrapperauxiliar" id="idformwrapperauxiliar" method="POST" action="/user/interests">
+			<form class="formwrapperauxiliar" id="idformwrapperauxiliar" method="POST" action="/user/interests" enctype="multipart/form-data">
 
 				<div class="formfield">
 					<label class="textform"><b>CHOOSE YOUR PROFILE PHOTO</b></label>
 
-					<input  type="file" onchange="onFileSelected(event)">
+					<input  type="file" name='image'>
 				</div>
 
 

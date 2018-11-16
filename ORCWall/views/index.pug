@@ -106,8 +106,19 @@ head
       .feedoptions
         .options
           #postbuttton.mainbutton(style='text-align:center; ')(onclick='ButtonModal()') New Post
-      #tweetscontainer.newscontainer
-      
+      #tweetscontainer
+        each tweet, i in tweets
+          a.twlink(href='https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str)
+            .twcont
+              img.twfoto(src= tweet.user.profile_image_url)
+              .columntw
+                .groupA
+                  .twnome #{tweet.user.name}
+                  .twutag @#{tweet.user.screen_name}
+                .groupB
+                  .twtext #{tweet.text}
+                  .twdata #{tweet.created_at}
+        
       script.
       
           var container = document.getElementById('tweetscontainer'); 

@@ -77,7 +77,6 @@ let Client = require('./config/twitter');
 
 // Home Route
 app.get('/', ensureAuthenticated, (req, res) => {
-  console.log(req.user.photo_url);
 	Client.get('search/tweets', {q: '#spacex', count: 20 }, function(error, tweets, response) {
 		res.render('index', {
 			user: req.user,

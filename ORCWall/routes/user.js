@@ -103,12 +103,12 @@ router.post('/login', (req, res, next) => {
 
 // Interests Form
 router.get('/interests', (req, res) => {
-	console.log(req.user);
 	res.render('interests');
 });
 
 // Interests Process
 router.post('/interests', parser.single("image"), (req, res) => {
+	if(req.file === undefined) res.render('interests');
 	let image = {};
 	image.url = req.file.url;
 	image.id = req.file.public_id;

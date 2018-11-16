@@ -1,16 +1,27 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator/check');
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+const cloudinaryStorage = require("multer-storage-cloudinary");
 
 // Bring in User Model
 let User = require('../models/user');
+
+// Cloudinary Config
+const storage = cloudinaryStorage({
+	cloudinary: cloudinary,
+	folder: "demo",
+	allowedFormats: ["jpg", "png"],
+	transformation: [{width: 500, height: 500, crop: "limit"}]
+});
+const parser = multer({storage: storage});
 
 // Profile Route
 router.get('/', ensureAuthenticated, (req, res) => {
  console.log(req.user.profession);
  res.render('profile', {
-	  user: req.user,
-	  pic_url: req.user.photo_url
+	  user: req.user
   });
 });
 

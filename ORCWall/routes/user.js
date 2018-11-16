@@ -3,11 +3,23 @@ const router = express.Router();
 const { check, validationResult } = require('express-validator/check');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+const cloudinaryStorage = require("multer-storage-cloudinary");
 
 const saltRounds = 10;
 
 // Bring in User Model
 let User = require('../models/user');
+
+// Cloudinary Config
+const storage = cloudinaryStorage({
+	cloudinary: cloudinary,
+	folder: "demo",
+	allowedFormats: ["jpg", "png"],
+	transformation: [{width: 500, height: 500, crop: "limit"}]
+});
+const parser = multer({storage: storage});
 
 // Register Form
 router.get('/register', (req, res) => {
@@ -96,14 +108,19 @@ router.get('/interests', (req, res) => {
 });
 
 // Interests Process
-router.post('/interests', (req, res) => {
-	const tags = req.body.tags.split(/\s+|\u0023+/);
-	while(true){
-		let index = tags.indexOf('');
-		if(index === -1) break;
-		tags.splice(index, 1);
-	}
-	res.redirect('/');
+router.post('/interests', parser.single("image"), (req, res) => {
+	let image = {};
+	image.url = req.file.url;
+	image.id = req.file.public_id;
+	cloudinary.v2.uploader.upload(image.url, (error, result) => {
+		User.findOneAndUpdate({email: req.user.email}, {$set:{photo_url: result.url}}, {new: true}, (err, doc) => {
+			if (err) {
+				console.log(err);
+				return;
+			}
+		});
+		res.redirect('/');
+	});
 });
 
 // Logout

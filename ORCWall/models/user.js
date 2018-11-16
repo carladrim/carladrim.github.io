@@ -20,7 +20,7 @@ let userSchema = mongoose.Schema({
 	},
 	photo_url:{
 		type: String,
-		default: "..."
+		required: false
 	},
 	school:{
 		type: String,

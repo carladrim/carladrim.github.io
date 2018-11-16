@@ -77,7 +77,7 @@ app.get('*', (req, res, next) => {
 
 // Home Route
 app.get('/', ensureAuthenticated, (req, res) => {
-	Client.get('search/tweets', {q: req.user.hashtags[0], count: 50 }, (error, tweets, response) => {
+	Client.get('search/tweets', {q: "research", count: 50 }, (error, tweets, response) => {
 		res.render('index', {
 			user: req.user,
 			tweets: tweets.statuses

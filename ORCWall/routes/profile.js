@@ -59,7 +59,6 @@ router.post('/edit', [
 		let query = {_id: req.user.id};
 
 		User.updateOne(query, user, err => {
-			console.log();
 			if(err){
 				console.log(err);
 				return;

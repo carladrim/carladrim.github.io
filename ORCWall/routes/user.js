@@ -108,10 +108,30 @@ router.get('/interests', (req, res) => {
 
 // Interests Process
 router.post('/interests', parser.single("image"), (req, res) => {
+
 	if(req.file === undefined){
 		res.render('interests');
 		return;
 	}
+
+	// Hashtags saved in the database
+	const tags = req.body.tags.split(/\s+|\u0023+/);
+	while(true){
+		let index = tags.indexOf('');
+		if(index === -1) break;
+		tags.splice(index, 1);
+	}
+	let user = {};
+	user.hashtags = tags;
+	let query = {_id: req.user.id};
+	User.updateOne(query, user, err => {
+		if(err){
+			console.log(err);
+			return;
+		}
+	});
+
+	// Profile Picture URL saved in the database
 	let image = {};
 	image.url = req.file.url;
 	image.id = req.file.public_id;

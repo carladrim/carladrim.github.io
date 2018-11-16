@@ -67,17 +67,17 @@ app.use(passport.session());
 // Cloudinary Config
 require('./config/cloudinary');
 
+// Twitter Client Config
+let Client = require('./config/twitter');
+
 app.get('*', (req, res, next) => {
   res.locals.user = req.user || null;
   next();
 });
 
-// Twitter Client Config
-let Client = require('./config/twitter');
-
 // Home Route
 app.get('/', ensureAuthenticated, (req, res) => {
-	Client.get('search/tweets', {q: '#spacex', count: 50 }, (error, tweets, response) => {
+	Client.get('search/tweets', {q: req.user.hashtags[0], count: 50 }, (error, tweets, response) => {
 		res.render('index', {
 			user: req.user,
 			tweets: tweets.statuses

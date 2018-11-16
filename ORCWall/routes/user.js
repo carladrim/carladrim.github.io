@@ -108,7 +108,10 @@ router.get('/interests', (req, res) => {
 
 // Interests Process
 router.post('/interests', parser.single("image"), (req, res) => {
-	if(req.file === undefined) res.render('interests');
+	if(req.file === undefined){
+		res.render('interests');
+		return;
+	}
 	let image = {};
 	image.url = req.file.url;
 	image.id = req.file.public_id;

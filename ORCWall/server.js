@@ -77,21 +77,12 @@ let Client = require('./config/twitter');
 
 // Home Route
 app.get('/', ensureAuthenticated, (req, res) => {
-	Client.get('search/tweets', {q: '#spacex', count: 20 }, function(error, tweets, response) {
+	Client.get('search/tweets', {q: '#spacex', count: 50 }, (error, tweets, response) => {
 		res.render('index', {
 			user: req.user,
 			tweets: tweets.statuses
 		});
 	});
-});
-
-// Twitter Route
-app.get('/tweets', (req, res) => {
-  Client.get('search/tweets', {q: '#spacex', count: 20 }, function(error, tweets, response) {
-    res.render('tweets', {
-      tweets: tweets.statuses
-    });
-  });
 });
 
 // Route Files

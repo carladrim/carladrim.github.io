@@ -105,12 +105,12 @@ head
     .feed
       .feedoptions
         .options
-          #postbuttton.mainbutton(style='text-align:center; ')(onclick='ButtonModal()') New Post
-      #tweetscontainer
+          #postbuttton.mainbutton(style='text-align:center;', onclick='ButtonModal()') New Post
+      #tweetscontainer.newscontainer
         each tweet, i in tweets
           a.twlink(href='https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str)
             .twcont
-              img.twfoto(src= tweet.user.profile_image_url)
+              img.twphoto(src= tweet.user.profile_image_url)
               .columntw
                 .groupA
                   .twnome #{tweet.user.name}
@@ -118,71 +118,3 @@ head
                 .groupB
                   .twtext #{tweet.text}
                   .twdata #{tweet.created_at}
-        
-      script.
-      
-          var container = document.getElementById('tweetscontainer'); 
-          
-          for( var i=0; i < 10 ; i++){
-            var div = document.createElement('ol');
-            var novaDiv = document.createElement('div') ; 
-            novaDiv.classList.add('twcont');
-            
-            var column = document.createElement('div');
-            column.classList.add('columntw');
-            
-            var groupA = document.createElement('div');
-            groupA.classList.add('groupA');
-            var groupB = document.createElement('div');
-            groupB.classList.add('groupB');
-            
-            var fototw = document.createElement('img');
-              fototw.src="/resources/Images/woman.jpg"; // PATH FOR THE PHOTO URL
-              fototw.classList.add('twphoto');
-              
-            var nometw = document.createElement('div');
-              nometw.textContent= "Julie Barone";  //TWITTER AUTHOR
-              nometw.classList.add('twnome');
-            
-            var usertagtw = document.createElement('div');
-              usertagtw.textContent  = "@jbarone";   //TWEET USER TAG
-              usertagtw.classList.add('twutag');
-              
-            var datatw = document.createElement('div');
-              datatw.textContent = "30 Oct 2018";    //TWEET DATE
-              datatw.classList.add('twdata');
-              
-              
-            var texttw = document.createElement('div');
-              texttw.textContent  = "Had a great time at the #DevMeetup in Palo Alto! Looking forward to working together with new friends I made at @BiowareSoftworks x" 
-              texttw.classList.add('twtext');
-              
-            var linktw = document.createElement('a');
-              linktw.href  = "#";   //TWEET LINK
-                linktw.classList.add('twlink');
-              
-            document.getElementById("tweetscontainer").appendChild(linktw);
-            
-            novaDiv.appendChild(fototw);
-            groupA.appendChild(nometw);
-            groupA.appendChild(usertagtw);
-            
-            column.appendChild(groupA);
-            column.appendChild(groupB);
-            
-            groupB.appendChild(texttw);
-            groupB.appendChild(datatw);
-            
-        
-            novaDiv.appendChild(column);
-            linktw.appendChild(novaDiv);
-            
-          
-          
-          }
-          var numberTweets = tweets.lenght;
-          
-          
-      
-  
-      

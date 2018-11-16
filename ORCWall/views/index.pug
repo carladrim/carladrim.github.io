@@ -54,10 +54,10 @@ head
           path(fill='none', d='M0 0h24v24H0V0z')
           path#bell(fill='rgb(79, 79, 79)', d='M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-1.29 1.29c-.63.63-.19 1.71.7 1.71h13.17c.89 0 1.34-1.08.71-1.71L18 16z')
       .nav_icon
-        .textnav(onclick="location.href = '/profile';") #{first_name} #{last_name} 
+        .textnav(onclick="location.href = '/profile';") #{user.first_name} #{user.last_name} 
       .nav_icon
         a(href='/profile')
-          img(src=pic_url+'', style='width: 2em; border-radius: 50%;')
+          img(src=user.photo_url, style='width: 2em; border-radius: 50%;')
           a
       .nav_icon
         a(href='/user/logout')
@@ -105,73 +105,16 @@ head
     .feed
       .feedoptions
         .options
-          #postbuttton.mainbutton(style='text-align:center; ')(onclick='ButtonModal()') New Post
+          #postbuttton.mainbutton(style='text-align:center;', onclick='ButtonModal()') New Post
       #tweetscontainer.newscontainer
-      
-      script.
-      
-          var container = document.getElementById('tweetscontainer'); 
-          
-          for( var i=0; i < 10 ; i++){
-            var div = document.createElement('ol');
-            var novaDiv = document.createElement('div') ; 
-            novaDiv.classList.add('twcont');
-            
-            var column = document.createElement('div');
-            column.classList.add('columntw');
-            
-            var groupA = document.createElement('div');
-            groupA.classList.add('groupA');
-            var groupB = document.createElement('div');
-            groupB.classList.add('groupB');
-            
-            var fototw = document.createElement('img');
-              fototw.src="/resources/Images/woman.jpg"; // PATH FOR THE PHOTO URL
-              fototw.classList.add('twphoto');
-              
-            var nometw = document.createElement('div');
-              nometw.textContent= "Julie Barone";  //TWITTER AUTHOR
-              nometw.classList.add('twnome');
-            
-            var usertagtw = document.createElement('div');
-              usertagtw.textContent  = "@jbarone";   //TWEET USER TAG
-              usertagtw.classList.add('twutag');
-              
-            var datatw = document.createElement('div');
-              datatw.textContent = "30 Oct 2018";    //TWEET DATE
-              datatw.classList.add('twdata');
-              
-              
-            var texttw = document.createElement('div');
-              texttw.textContent  = "Had a great time at the #DevMeetup in Palo Alto! Looking forward to working together with new friends I made at @BiowareSoftworks x" 
-              texttw.classList.add('twtext');
-              
-            var linktw = document.createElement('a');
-              linktw.href  = "#";   //TWEET LINK
-                linktw.classList.add('twlink');
-              
-            document.getElementById("tweetscontainer").appendChild(linktw);
-            
-            novaDiv.appendChild(fototw);
-            groupA.appendChild(nometw);
-            groupA.appendChild(usertagtw);
-            
-            column.appendChild(groupA);
-            column.appendChild(groupB);
-            
-            groupB.appendChild(texttw);
-            groupB.appendChild(datatw);
-            
-        
-            novaDiv.appendChild(column);
-            linktw.appendChild(novaDiv);
-            
-          
-          
-          }
-          var numberTweets = tweets.lenght;
-          
-          
-      
-  
-      
+        each tweet, i in tweets
+          a.twlink(href='https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str)
+            .twcont
+              img.twphoto(src= tweet.user.profile_image_url)
+              .columntw
+                .groupA
+                  .twnome #{tweet.user.name}
+                  .twutag @#{tweet.user.screen_name}
+                .groupB
+                  .twtext #{tweet.text}
+                  .twdata #{tweet.created_at}

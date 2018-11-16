@@ -3,11 +3,23 @@ const router = express.Router();
 const { check, validationResult } = require('express-validator/check');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+const cloudinaryStorage = require("multer-storage-cloudinary");
 
 const saltRounds = 10;
 
 // Bring in User Model
 let User = require('../models/user');
+
+// Cloudinary Config
+const storage = cloudinaryStorage({
+	cloudinary: cloudinary,
+	folder: "demo",
+	allowedFormats: ["jpg", "png"],
+	transformation: [{width: 500, height: 500, crop: "limit"}]
+});
+const parser = multer({storage: storage});
 
 // Register Form
 router.get('/register', (req, res) => {
@@ -91,19 +103,47 @@ router.post('/login', (req, res, next) => {
 
 // Interests Form
 router.get('/interests', (req, res) => {
-	console.log(req.user);
 	res.render('interests');
 });
 
 // Interests Process
-router.post('/interests', (req, res) => {
+router.post('/interests', parser.single("image"), (req, res) => {
+
+	if(req.file === undefined){
+		res.render('interests');
+		return;
+	}
+
+	// Hashtags saved in the database
 	const tags = req.body.tags.split(/\s+|\u0023+/);
 	while(true){
 		let index = tags.indexOf('');
 		if(index === -1) break;
 		tags.splice(index, 1);
 	}
-	res.redirect('/');
+	let user = {};
+	user.hashtags = tags;
+	let query = {_id: req.user.id};
+	User.updateOne(query, user, err => {
+		if(err){
+			console.log(err);
+			return;
+		}
+	});
+
+	// Profile Picture URL saved in the database
+	let image = {};
+	image.url = req.file.url;
+	image.id = req.file.public_id;
+	cloudinary.v2.uploader.upload(image.url, (error, result) => {
+		User.findOneAndUpdate({email: req.user.email}, {$set:{photo_url: result.url}}, {new: true}, (err, doc) => {
+			if (err) {
+				console.log(err);
+				return;
+			}
+		});
+		res.redirect('/');
+	});
 });
 
 // Logout

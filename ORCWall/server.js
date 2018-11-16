@@ -6,11 +6,10 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const Twitter = require('twitter');
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+const cloudinaryStorage = require('multer-storage-cloudinary');
 const config = require('./config/database');
-
-const multer = require("multer");
-const cloudinary = require("cloudinary");
-const cloudinaryStorage = require("multer-storage-cloudinary");
 
 const port = 3000;
 
@@ -65,59 +64,25 @@ require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Cloudinary
-cloudinary.config({
-  cloud_name: "de0t7mja3",
-  api_key: "285679315285469",
-  api_secret: "G0Faz4g_dKMM7YAybOBDBwEmzEM"
-  });
-  const storage = cloudinaryStorage({
-  cloudinary: cloudinary,
-  folder: "demo",
-  allowedFormats: ["jpg", "png"],
-  transformation: [{ width: 500, height: 500, crop: "limit" }]
-  });
-  const parser = multer({ storage: storage });
+// Cloudinary Config
+require('./config/cloudinary');
 
-//Photo upload
-app.post('/user/interests', parser.single("image"), (req, res) => {
-  //console.log(req.file) // to see what is returned to you
-  console.log(req.user.email)
-  const image = {};
-  image.url = req.file.url;
-  image.id = req.file.public_id;
-  cloudinary.v2.uploader.upload(image.url, 
-    function(error, result) {console.log(result, error); console.log(result.url+" "+req.user.email); let picurl=result.url; User.findOneAndUpdate({email: req.user.email}, {$set:{photo_url: picurl}}, {new: true}, (err, doc) => {if (err) {console.log("Something wrong when updating data!");}console.log(doc);});; return res.redirect('/');});
-
-});
+// Twitter Client Config
+let Client = require('./config/twitter');
 
 app.get('*', (req, res, next) => {
   res.locals.user = req.user || null;
   next();
 });
 
-// Twitter Client Config
-let Client = require('./config/twitter');
-
 // Home Route
 app.get('/', ensureAuthenticated, (req, res) => {
-  Client.get('search/tweets', {q: '#spacex', count: 20 }, function(error, tweets, response) {
-	 res.render('index', {
-      first_name: req.user.first_name,
-      last_name: req.user.last_name,
-      pic_url: req.user.photo_url,
-      tweets: tweets.statuses
-    });
-  });
-});
-
-// Twitter Route
-app.get('/tweets', (req, res) => {
-  Client.get('search/tweets', {q: '#spacex', count: 20 }, function(error, tweets, response) {
-    res.render('tweets', {
-      tweets: tweets.statuses
-    });
-  });
+	Client.get('search/tweets', {q: "research", count: 50 }, (error, tweets, response) => {
+		res.render('index', {
+			user: req.user,
+			tweets: tweets.statuses
+		});
+	});
 });
 
 // Route Files

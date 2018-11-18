@@ -77,7 +77,10 @@ app.get('*', (req, res, next) => {
 
 // Home Route
 app.get('/', ensureAuthenticated, (req, res) => {
-	Client.get('search/tweets', {q: "research", count: 50 }, (error, tweets, response) => {
+	let tags = req.user.hashtags;
+	for (i in tags) tags[i] = '"'+tags[i]+'"';
+	let query = tags.toString().replace(/,/g, ' OR ');
+	Client.get('search/tweets', {q: query, count: 50 }, (error, tweets, response) => {
 		res.render('index', {
 			user: req.user,
 			tweets: tweets.statuses

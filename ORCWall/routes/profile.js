@@ -28,12 +28,35 @@ router.get('/', ensureAuthenticated, (req, res) => {
 // Profile Edit Process
 router.post('/edit', [
 
-	check('email', 'Email is Required').not().isEmpty(),
-	check('email', 'Email is not Valid').isEmail(),
-	check('first_name', 'First Name is Required').not().isEmpty(),
-	check('first_name', 'First Name can\'t contain Numbers').not().matches(/\d/),
-	check('last_name', 'Last Name is Required').not().isEmpty(),
-	check('last_name', 'Last Name can\'t contain Numbers').not().matches(/\d/)
+	check('email')
+	.not()
+	.isEmpty()
+	.withMessage('Email is Required')
+	.isEmail()
+	.withMessage('Email is not Valid')
+	.custom((value, {req}) => {
+		return new Promise((resolve, reject) => {
+			User.findOne({email: req.body.email}, (err, user) => {
+				if(err) reject(new Error(err))
+				if(Boolean(user)) reject(new Error('E-mail Already in Use'))
+				resolve(true);
+			});
+		});
+	}),
+	check('first_name', 'First Name is Required')
+	.not()
+	.isEmpty()
+	.withMessage('First Name is Required')
+	.not()
+	.matches(/\d/)
+	.withMessage('First Name can\'t contain Numbers'),
+	check('last_name')
+	.not()
+	.isEmpty()
+	.withMessage('Last Name is Required')
+	.not()
+	.matches(/\d/)
+	.withMessage('Last Name can\'t contain Numbers')
 
 ], (req, res) => {
 	let user = {};

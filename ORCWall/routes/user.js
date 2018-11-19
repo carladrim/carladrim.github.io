@@ -29,19 +29,47 @@ router.get('/register', (req, res) => {
 // Register Process
 router.post('/register', [
 
-	check('email', 'Email is Required').not().isEmpty(),
-	check('email', 'Email is not Valid').isEmail(),
-	check('password', 'Password is Required').not().isEmpty(),
-	check('password', 'Password Must Contain 5 Characters').isLength({ min: 5 }),
-	check('password', 'Password Must Contain an Uppercase Letter').matches(/[A-Z]/),
-	check('password', 'Password Must Contain a Number').matches(/\d/),
-	check('r_password', 'Passwords do not Match').custom((value, { req }) => {
-		return value === req.body.password;
+	check('email')
+	.not()
+	.isEmpty()
+	.withMessage('Email is Required')
+	.isEmail()
+	.withMessage('Email is not Valid')
+	.custom((value, {req}) => {
+		return new Promise((resolve, reject) => {
+			User.findOne({email: req.body.email}, (err, user) => {
+				if(err) reject(new Error(err))
+				if(Boolean(user)) reject(new Error('E-mail Already in Use'))
+				resolve(true);
+			});
+		});
 	}),
-	check('first_name', 'First Name is Required').not().isEmpty(),
-	check('first_name', 'First Name can\'t contain Numbers').not().matches(/\d/),
-	check('last_name', 'Last Name is Required').not().isEmpty(),
-	check('last_name', 'Last Name can\'t contain Numbers').not().matches(/\d/)
+	check('password')
+	.not()
+	.isEmpty()
+	.withMessage('Password is Required')
+	.isLength({ min: 5 })
+	.withMessage('Password Must Contain 5 Characters')
+	.matches(/[A-Z]/)
+	.withMessage('Password Must Contain an Uppercase Letter')
+	.matches(/\d/)
+	.withMessage('Password Must Contain a Number'),
+	check('r_password', 'Passwords do not Match')
+	.custom((value, { req }) => { return value === req.body.password; }),
+	check('first_name', 'First Name is Required')
+	.not()
+	.isEmpty()
+	.withMessage('First Name is Required')
+	.not()
+	.matches(/\d/)
+	.withMessage('First Name can\'t contain Numbers'),
+	check('last_name')
+	.not()
+	.isEmpty()
+	.withMessage('Last Name is Required')
+	.not()
+	.matches(/\d/)
+	.withMessage('Last Name can\'t contain Numbers')
 
 ], (req, res) => {
 	const email = req.body.email;

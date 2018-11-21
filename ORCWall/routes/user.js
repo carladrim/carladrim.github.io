@@ -84,7 +84,7 @@ router.post('/register', [
 		for (let obj of errors.array())
 			console.log(obj.msg);
 		res.render('register', {
-			errors: errors
+			errors: errors.array()
 		});
 	} else {
 		let newUser = new User({

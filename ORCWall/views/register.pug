@@ -1,1 +1,38 @@
-include registerForm.html
+doctype html
+html
+  head
+    title Register Form
+    link(rel='stylesheet', href='/css/forms.css', type='text/css')
+    link(rel='shortcut icon', type='image/png', href='/resources/Images/favicon.png')
+  body
+    .formwrapper
+      form#idformwrapperauxiliar.formwrapperauxiliar(method='POST', action='/user/register')
+        .formfield
+          label.textform
+            b E-MAIL
+          input#emailinput.inputform(name='email', type='text', placeholder='Enter e-mail', required='')
+        .formfield(style=' flex-direction: row;')
+          div(style='display: flex; width: calc((100% - 2em) / 2); flex-direction: column; margin-right: 2em; ')
+            label.textform
+              b PASSWORD
+            input#passwordinput.inputform(name='password', type='password', placeholder='Enter password', required='')
+          .formfield(style='display: flex; width: calc((100% - 2em) / 2); flex-direction: column; ')
+            label.textform
+              b REPEAT PASSWORD
+            input#repeatpasswordinput.inputform(name='r_password', type='password', placeholder='Enter same password', required='')
+        div(style='margin-bottom: 2em; border: 0;  border-top: 1px solid #91A59B;')  
+        .formfield(style='width: 100%; flex-direction: row;')
+          div(style='display: flex; width: calc((100% - 2em) / 2); flex-direction: column; margin-right: 2em;')
+            label.textform
+              b FIRST NAME
+            input#firstnameinput.inputform(name='first_name', type='text', placeholder='Enter first name', required='')
+          .formfield(style='display: flex; width: calc((100% - 2em) / 2) ; flex-direction: column;  ')
+            label.textform
+              b LAST NAME
+            input#lastnameinput.inputform(name='last_name', type='text', placeholder='Enter last name', required='')
+        .buttonsdiv
+          button#createaccountbutton.secbutton(type='button', onclick="location.href = '/user/login';") Already have an account?
+          button#loginbutton.mainbutton(type='submit') Create Account
+    
+    each error, i in errors
+        p #{error.msg}

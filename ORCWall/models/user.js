@@ -20,7 +20,8 @@ let userSchema = mongoose.Schema({
 	},
 	photo_url:{
 		type: String,
-		required: false
+		required: false,
+		default: "/resources/Images/user.png"
 	},
 	school:{
 		type: String,

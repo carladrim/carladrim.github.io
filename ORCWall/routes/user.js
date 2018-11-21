@@ -137,11 +137,6 @@ router.get('/interests', (req, res) => {
 // Interests Process
 router.post('/interests', parser.single("image"), (req, res) => {
 
-	if(req.file === undefined){
-		res.render('interests');
-		return;
-	}
-
 	// Hashtags saved in the database
 	const tags = req.body.tags.split(/\s+|\u0023+/);
 	while(true){
@@ -160,11 +155,16 @@ router.post('/interests', parser.single("image"), (req, res) => {
 	});
 
 	// Profile Picture URL saved in the database
+
+	if(req.file === undefined){
+		return res.redirect('/');
+	}
+
 	let image = {};
 	image.url = req.file.url;
 	image.id = req.file.public_id;
 	cloudinary.v2.uploader.upload(image.url, (error, result) => {
-		User.findOneAndUpdate({email: req.user.email}, {$set:{photo_url: result.url}}, {new: true}, (err, doc) => {
+		User.updateOne({_id: req.user.id}, {photo_url: result.url}, {new: true}, (err, doc) => {
 			if (err) {
 				console.log(err);
 				return;

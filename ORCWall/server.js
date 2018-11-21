@@ -81,9 +81,11 @@ app.get('/', ensureAuthenticated, (req, res) => {
 	for (i in tags) tags[i] = '"'+tags[i]+'"';
 	let query = tags.toString().replace(/,/g, ' OR ');
 	Client.get('search/tweets', {q: query, count: 50 }, (error, tweets, response) => {
+		let tweet = tweets.statuses;
+		if(tweet === undefined) tweet = [];
 		res.render('index', {
 			user: req.user,
-			tweets: tweets.statuses
+			tweets: tweet
 		});
 	});
 });

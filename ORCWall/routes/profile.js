@@ -19,7 +19,6 @@ const parser = multer({storage: storage});
 
 // Profile Route
 router.get('/', ensureAuthenticated, (req, res) => {
- console.log(req.user.profession);
  res.render('profile', {
 	  user: req.user
   });

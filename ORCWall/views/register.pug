@@ -34,5 +34,6 @@ html
           button#createaccountbutton.secbutton(type='button', onclick="location.href = '/user/login';") Already have an account?
           button#loginbutton.mainbutton(type='submit') Create Account
     
-    each error, i in errors
-        p #{error.msg}
+    if(errors)
+        each error, i in errors
+            p #{error.msg}

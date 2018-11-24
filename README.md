@@ -1,4 +1,4 @@
-# espl6
+﻿# espl6
 Projeto OrcWall: espl6 2018/2019 
 
 Organização das Pastas no GitHub: 
@@ -27,4 +27,7 @@ ES2018_PL6_ORCWALL _ (equipa que produziu o artefacto abreviada) _ (nome do docu
 
 Atualizar a cada semana o esforço neste link (nova semana dispovínel a partir de dia 23-11):
 https://docs.google.com/spreadsheets/d/1J_Mr0x6I82NE-g9BqH53KGUNZygplPUSrQOrRN1qUPI/edit?usp=sharing
+
+
+As Apresentações Semanais e os Documentos que as acompanham deverão ser colocadas na Pasta "Apresentações e Documentos Semanais"
 

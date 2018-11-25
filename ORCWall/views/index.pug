@@ -57,7 +57,7 @@ head
         .textnav(onclick="location.href = '/profile';") #{user.first_name} #{user.last_name} 
       .nav_icon
         a(href='/profile')
-          img(src=user.photo_url, style='width: 2em; border-radius: 50%;')
+          img.nav-pfp(src=user.photo_url)
           a
       .nav_icon
         a(href='/user/logout')

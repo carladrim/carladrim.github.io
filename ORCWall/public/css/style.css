@@ -75,6 +75,12 @@ html {
 }
 
 /* SEARCH BAR--  - navigation bar */
+.nav-pfp {
+  height: 2em;
+  width: 2em;
+  border-radius: 100%;
+}
+
 .navbarsearch {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -138,6 +144,8 @@ html {
   margin: 0.8em;
   display: block;
 }
+
+
 .textnav {
   font-family: "Rubik", sans-serif;
   margin-left: 2em;
@@ -469,6 +477,10 @@ div.numbers-container {
   padding: 20px;
 }
 
+#profilecancelbutton {
+  margin-right: 1em;
+}
+
 .profileedit input,
 textarea {
   font-family: "Muli", sans-serif;
@@ -766,7 +778,7 @@ td.wider {
 .twphoto{
   width: 3em;
   height: 3em;
-  border-radius: 50%;
+  border-radius: 100%;
   margin:1em;
 }
 .twnome{

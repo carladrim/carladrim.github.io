@@ -57,7 +57,7 @@ head
         .textnav(onclick="location.href = '/profile';") #{user.first_name} #{user.last_name} 
       .nav_icon
         a(href='/profile')
-          img(src=user.photo_url, style='width: 2em; border-radius: 50%;')
+          img.nav-pfp(src=user.photo_url, style='width: 2em; border-radius: 50%;')
       .nav_icon
         a(href='/user/logout')
           svg(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewbox='0 0 24 24')
@@ -117,7 +117,8 @@ head
               | #{user.biography}
             br
             br
-            input(type='submit', value='Submit')
+            input#profilecancelbutton(type='button' value='Cancel')
+            input.mainbutton(type='submit', value='Submit')
       // PROFILE INFORMATION
       #infoU
         .userinfo-box

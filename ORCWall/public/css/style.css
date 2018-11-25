@@ -254,7 +254,7 @@ html {
 }
 .newscontainer {
   margin: 3em;
-  margin-top: 1.5em;
+  margin-top: 3em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -306,8 +306,7 @@ html {
 
 .options {
   text-align: right;
-  float:right;
-  position: relative;
+  width: 100%;
 }
 
 #postbuttton:hover{
@@ -703,6 +702,21 @@ td.wider {
 
 /* --------   TWEETS ------ */
 
+.tweetform {
+  width: 98%;
+}
+
+.tweetbox {
+  width: 100%;
+  border: 1px solid #37a36d;
+  font-family: 'Muli', sans-serif;
+  color: darkgray;
+  border-radius: 5px;
+  padding: 1em;
+  padding-right: 0;
+  margin: 0;
+  margin-bottom: 1em;
+}
 
 .twcont{
   text-decoration:  none;

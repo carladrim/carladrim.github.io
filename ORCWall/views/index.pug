@@ -105,7 +105,10 @@ head
     .feed
       .feedoptions
         .options
-          #postbuttton.mainbutton(style='text-align:center;', onclick='ButtonModal()') New Post
+          form.tweetform(action='')
+            input.tweetbox(type='text' name='tweettext' value='Post to twitter! What are you thinking?')
+            br
+            input.mainbutton(type='submit' value='Tweet')
       #tweetscontainer.newscontainer
         each tweet, i in tweets
           a.twlink(href='https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str)

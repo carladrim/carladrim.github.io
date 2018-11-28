@@ -188,6 +188,8 @@ html {
 /* SIDE BAR--*/
 
 .sidebar {
+  font-family: 'Muli', sans-serif;
+  color: #91a59b;
   z-index: 2;
   margin-top: 4.5em;
   position: fixed;
@@ -222,11 +224,13 @@ html {
   height: 40px;
   align-items: center;
 }
+
 .sidebarsections:hover a {
   color: #009245;
   cursor: pointer;
   font-weight: 700;
 }
+
 .sidebarsections:hover .sideicon {
   fill: #009245;
 }

@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
   <script src="main.js"></script>
 </head>
-<body>
+<body id="resources-body">
   <div class="container">
 
     <!-- TOP BAR -->
@@ -73,86 +73,93 @@
 
     </div>
 
+    <!--  LEFT BAR    -->
 
-
-
+  <div class="sidebar">
+    <div class="sidebarsmall">
+      <div class="sidebarsections">
+        <div class="leftbarIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path class="sideicon" fill="#91A59B" d="M4 13h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zm0 8h6c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1zm10 0h6c.55 0 1-.45 1-1v-8c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1v8c0 .55.45 1 1 1zM13 4v4c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1z"></path>
+          </svg></div><a>Dashboard</a>
+      </div>
+      <div class="sidebarsections">
+        <div class="leftbarIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path class="sideicon" fill="#91A59B" d="M19 18l2 1V3c0-1.1-.9-2-2-2H8.99C7.89 1 7 1.9 7 3h10c1.1 0 2 .9 2 2v13zM15 5H5c-1.1 0-2 .9-2 2v16l7-3 7 3V7c0-1.1-.9-2-2-2z"></path>
+          </svg></div>
+        <a class="leftbaroptionnotactive">My library</a>
+      </div>
+      <div class="sidebarsections">
+        <div class="leftbarIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path class="sideicon" fill="#91A59B" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V18c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-1.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05.02.01.03.03.04.04 1.14.83 1.93 1.94 1.93 3.41V18c0 .35-.07.69-.18 1H22c.55 0 1-.45 1-1v-1.5c0-2.33-4.67-3.5-7-3.5z"></path>
+          </svg></div>
+        <a class="leftbaroptionnotactive">Groups</a>
+      </div>
+      <div class="sidebarsections">
+        <div class="leftbarIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path class="sideicon" fill="#91A59B" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path>
+          </svg></div>
+        <a class="leftbaroptionnotactive">Settings</a>
+      </div>
+    </div>
+  </div>
 
     <!-- MAIN BODY -->
 
-    <div class="childcontainer" id="resources-child">
-      <div class="resources-outer">
-        <table class="resources-table">
-          <tr class="heading">
-            <th>Hashtags</th>
-            <th></th>
-            <th>Referenced</th>
-            <th>Last Update</th>
-          </tr>
-          <tr>
-            <td class="table-divider"></td>
-          </tr>
-          <tr>
-            <td>#Microsoft</td>
-            <td></td>
-            <td>20</td>
-            <td>Yesterday</td>
-          </tr>
-          <tr>
-            <td>#Twitter</td>
-            <td></td>
-            <td>13</td>
-            <td>3 hours ago</td>
-          </tr>
-          <tr>
-            <td>#Bootstrap</td>
-            <td></td>
-            <td>4</td>
-            <td>Yesterday</td>
-          </tr>
-          <tr>
-            <td>#HTTPS</td>
-            <td></td>
-            <td>9</td>
-            <td>Last week</td>
-          </tr>
-          <tr>
-            <td><button class="res-button" id="add-hashtag">+</button></td>
-          </tr>
-        </table>
-
-        
-
-        <table class="resources-table">
-            <tr class="heading">
-              <th>Links</th>
-              <th class="wider">URL</th>
-              <th>Last Update</th>
-            </tr>
-            <tr>
-              <td>Twitter</td>
-              <td class="wider">https://twitter.com/</td>
-              <td>Yesterday</td>
-            </tr>
-            <tr>
-              <td>R-Network</td>
-              <td class="wider">http://www.researchers.net/</td>
-              <td>3 hours ago</td>
-            </tr>
-            <tr>
-              <td>NatGeo</td>
-              <td class="wider">http://natgeo.com/</td>
-              <td>Yesterday</td>
-            </tr>
-            <tr>
-              <td>Hubble PES</td>
-              <td class="wider">https://hubble.nasa.gov/</td>
-              <td>Last week</td>
-            </tr>
-            <tr>
-              <td><button class="res-button" id="add-link">+</button></td>
-            </tr>
-          </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="newscontainer" id="rsc-container">
+      <div class="rsc-card">
+        <a href=""><h3 class="rsc-title">This is this link's title!</h3></a>
+        <p class="rsc-url">https://thisisanurl.com/en</p>
+        <p class="rsc-description">This is a description for what this link is supposed to do, 
+          and why it might be useful sometime in the future. It's also kind of lenghty, but
+        that's quite alright. It can be.</p>
+        <div class="rsc-tags-container">
+          <a href=""><p class="rsc-tag">link</p></a>
+          <a href=""><p class="rsc-tag">tagging</p></a>
+          <a href=""><p class="rsc-tag">kill me</p></a>
+          <a href=""><p class="rsc-tag">link</p></a>
+        </div>
       </div>
+
+      <div class="rsc-card">
+          <a href=""><h3 class="rsc-title">This is this link's title!</h3></a>
+          <p class="rsc-url">https://thisisanurl.com/en</p>
+          <p class="rsc-description">This is a description for what this link is supposed to do, 
+            and why it might be useful sometime in the future. It's also kind of lenghty, but
+          that's quite alright. It can be.</p>
+          <div class="rsc-tags-container">
+            <a href=""><p class="rsc-tag">link</p></a>
+            <a href=""><p class="rsc-tag">tagging</p></a>
+            <a href=""><p class="rsc-tag">kill me</p></a>
+            <a href=""><p class="rsc-tag">link</p></a>
+          </div>
+        </div>
+
+        <div class="rsc-card">
+            <a href=""><h3 class="rsc-title">This is this link's title!</h3></a>
+            <p class="rsc-url">https://thisisanurl.com/en</p>
+            <p class="rsc-description">This is a description for what this link is supposed to do, 
+              and why it might be useful sometime in the future. It's also kind of lenghty, but
+            that's quite alright. It can be.</p>
+            <div class="rsc-tags-container">
+              <a href=""><p class="rsc-tag">link</p></a>
+              <a href=""><p class="rsc-tag">tagging</p></a>
+              <a href=""><p class="rsc-tag">kill me</p></a>
+              <a href=""><p class="rsc-tag">link</p></a>
+            </div>
+          </div>
+    </div>
+
+
     </div>
 
   </div>

@@ -85,6 +85,8 @@ head
       #myModal2.modal
         // Modal content
         .modal-content
+          .error
+            p Error message here!
           form.profileedit(method='POST', action='/profile/edit')
             | First Name:
             br
@@ -101,14 +103,6 @@ head
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;E-Mail:
             br
             input(type='text', name='email', value=user.email)
-            br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Studied At:
-            br
-            input(type='text', name='school', value=user.school)
-            br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Works On:
-            br
-            input(type='text', name='workplace', value=user.workplace)
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Biography:
             br

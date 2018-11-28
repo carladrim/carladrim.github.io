@@ -10,14 +10,17 @@ Organização das Pastas no GitHub:
 
         1.1.1 Várias versões dos MQ's 
 
-    1.2 Aprsentações semanais 
+    1.2 Apresentações semanais 
 
     1.3 Artefactos 
 
-        1.3.1 Documentos produzidos ** 
+        1.3.1 Entregas da Sprint x ** 
 
-        1.3.2 Entregas da Sprint ** 
-
+        1.3.2 (Outras Pastas de artefactos...) ** 
+     
+     1.3.2 (Nome das Pastas com documentos da mesma natureza que sejam mais vezes consultados. Ex: documentos de requisitos, relatorios testes...)  
+        
+        
 ** às unidades que se aplicar, cujos artefactos produzidos sejam de tipos diferentes e, por sua vez, tenham de ser organizados em pastas diferentes 
 
 

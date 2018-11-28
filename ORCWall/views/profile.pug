@@ -85,6 +85,8 @@ head
       #myModal2.modal
         // Modal content
         .modal-content
+          .error
+            p Error message here!
           form.profileedit(method='POST', action='/profile/edit')
             | First Name:
             br
@@ -102,20 +104,15 @@ head
             br
             input(type='text', name='email', value=user.email)
             br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Studied At:
-            br
-            input(type='text', name='school', value=user.school)
-            br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Works On:
-            br
-            input(type='text', name='workplace', value=user.workplace)
-            br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Biography:
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&ZeroWidthSpace;
             textarea#bio(name='biography', rows='2', cols='40')
               | #{user.biography}
             br
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Choose a new profile picture:
+            br
+            input(type='file' name='image')
             br
             input#profilecancelbutton(type='button' value='Cancel')
             input.mainbutton(type='submit', value='Submit')

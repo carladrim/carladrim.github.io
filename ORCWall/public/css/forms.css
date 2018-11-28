@@ -8,6 +8,7 @@
 body{
   background-color: #F1F1F1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 80vh;
@@ -209,3 +210,18 @@ body{
     outline: 0;
     padding: 0.5em 0.1em;
 }
+
+/* -------- ERROR MESSAGES -------*/
+
+.error {
+  position: relative;
+  background-color: #ffcece;
+  border: 1px solid lightcoral;
+  border-radius: 5px;
+  color: darkred;
+  width: 29%;
+  padding-left: 1em;
+  padding-right: 1em;
+  bottom: 1.3em;
+}
+

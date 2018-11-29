@@ -5,8 +5,10 @@ html
     link(rel='stylesheet', href='/css/forms.css', type='text/css')
     link(rel='shortcut icon', type='image/png', href='/resources/Images/favicon.png')
   body
-    .error
-      p Error message here!
+    if(errors)
+      .error
+        each error, i in errors
+            p #{error.msg}
     .formwrapper
       form#idformwrapperauxiliar.formwrapperauxiliar(method='POST', action='/user/register')
         .formfield
@@ -35,7 +37,3 @@ html
         .buttonsdiv
           button#createaccountbutton.secbutton(type='button', onclick="location.href = '/user/login';") Already have an account?
           button#loginbutton.mainbutton(type='submit') Create Account
-    
-    if(errors)
-        each error, i in errors
-            p #{error.msg}

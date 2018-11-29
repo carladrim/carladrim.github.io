@@ -42,7 +42,7 @@ router.post('/edit', [
 			});
 		});
 	}),
-	check('first_name', 'First Name is Required')
+	check('first_name')
 	.not()
 	.isEmpty()
 	.withMessage('First Name is Required')

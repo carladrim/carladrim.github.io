@@ -81,8 +81,6 @@ router.post('/register', [
 	const errors = validationResult(req);
 
 	if(!errors.isEmpty()) {
-		for (let obj of errors.array())
-			console.log(obj.msg);
 		res.render('register', {
 			errors: errors.array()
 		});

@@ -70,11 +70,9 @@ router.post('/edit', [
 	const errors = validationResult(req);
 
 	if(!errors.isEmpty()) {
-		for (let obj of errors.array())
-			console.log(obj.msg);
 		res.render('profile', {
 			user: req.user,
-			errors: errors
+			errors: errors.array()
 		});
 	} else {
 

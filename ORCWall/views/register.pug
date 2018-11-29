@@ -8,7 +8,7 @@ html
     if(errors)
       .error
         each error, i in errors
-            p #{error.msg}
+          p #{error.msg}
     .formwrapper
       form#idformwrapperauxiliar.formwrapperauxiliar(method='POST', action='/user/register')
         .formfield

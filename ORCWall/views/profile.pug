@@ -85,8 +85,10 @@ head
       #myModal2.modal
         // Modal content
         .modal-content
-          .error
-            p Error message here!
+          if(errors)
+            .error
+              each error, i in errors
+                p #{error.msg}
           form.profileedit(method='POST', action='/profile/edit')
             | First Name:
             br

@@ -6,8 +6,9 @@ html
     link(rel='shortcut icon', type='image/png', href='/resources/Images/favicon.png')
     link(href='https://fonts.googleapis.com/css?family=Muli:400,600,700', rel='stylesheet')
   body
-    .error
-      p Error message here!
+    if(errors)
+      .error
+        p #{errors}
     .formwrapper
       form#idformwrapperauxiliar.formwrapperauxiliar(method='POST', action='/user/login')
         .formfield(style='width: 100%;')

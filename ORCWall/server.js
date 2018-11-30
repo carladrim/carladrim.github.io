@@ -10,6 +10,7 @@ const multer = require('multer');
 const cloudinary = require('cloudinary');
 const cloudinaryStorage = require('multer-storage-cloudinary');
 const config = require('./config/database');
+const axios = require('axios');
 
 const port = 3000;
 
@@ -78,14 +79,32 @@ app.get('*', (req, res, next) => {
 // Home Route
 app.get('/', ensureAuthenticated, (req, res) => {
 	let tags = req.user.hashtags;
+	let redditp;
+
+	console.log(tags);
+
+	if(tags.length == 0) tags[0] = "test";
+
+	for (i in tags){
+		axios.get('https://www.reddit.com/r/'+tags[0]+'/new.json')
+			.then(function (response) {
+				redditp = response.data.data.children;
+			})
+			.catch(function (error) {
+				res.redirect('/');
+			});
+	}
+
 	for (i in tags) tags[i] = '"'+tags[i]+'"';
 	let query = tags.toString().replace(/,/g, ' OR ');
 	Client.get('search/tweets', {q: query, count: 50 }, (error, tweets, response) => {
 		let tweet = tweets.statuses;
 		if(tweet === undefined) tweet = [];
+		if(redditp === undefined) redditp = [];
 		res.render('index', {
 			user: req.user,
-			tweets: tweet
+			tweets: tweet,
+			reddits: redditp
 		});
 	});
 });

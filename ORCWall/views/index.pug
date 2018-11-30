@@ -121,3 +121,16 @@ head
                 .groupB
                   .twtext #{tweet.text}
                   .twdata #{tweet.created_at}
+        h1 Reddit posts
+        each reddit, i in reddits
+          a.twlink(href=reddit.data.url)
+            .twcont
+              img.twphoto(src= reddit.data.thumbnail)
+              .columntw
+                .groupA
+                  .twnome #{reddit.data.author}
+                  .twutag @#{reddit.data.author}
+                .groupB
+                  .twtext #{reddit.data.title}
+                  .twtext #{reddit.data.selftext}
+                  .twdata #{reddit.data.created_utc}

@@ -37,7 +37,7 @@ router.post('/register', [
 	.withMessage('Email is not Valid')
 	.custom((value, {req}) => {
 		return new Promise((resolve, reject) => {
-			User.findOne({email: req.body.email}, (err, user) => {
+			User.findOne({email: value}, (err, user) => {
 				if(err) reject(new Error(err))
 				if(Boolean(user)) reject(new Error('E-mail Already in Use'))
 				resolve(true);
@@ -164,10 +164,7 @@ router.post('/interests', parser.single("image"), (req, res) => {
 		return res.redirect('/');
 	}
 
-	let image = {};
-	image.url = req.file.url;
-	image.id = req.file.public_id;
-	cloudinary.v2.uploader.upload(image.url, (error, result) => {
+	cloudinary.v2.uploader.upload(req.file.url, (error, result) => {
 		User.updateOne({_id: req.user.id}, {photo_url: result.url}, {new: true}, (err, doc) => {
 			if (err) {
 				console.log(err);

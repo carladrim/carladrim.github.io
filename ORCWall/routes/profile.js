@@ -35,9 +35,11 @@ router.post('/edit', [
 	.withMessage('Email is not Valid')
 	.custom((value, {req}) => {
 		return new Promise((resolve, reject) => {
-			User.findOne({email: req.body.email}, (err, user) => {
-				if(err) reject(new Error(err))
-				if(Boolean(user)) reject(new Error('E-mail Already in Use'))
+			User.findOne({email: value}, (err, user) => {
+				if(err) reject(new Error(err));
+				if(Boolean(user)){
+					if(req.user.email !== value) reject(new Error('E-mail Already in Use'));
+				}
 				resolve(true);
 			});
 		});
@@ -70,7 +72,7 @@ router.post('/edit', [
 	const errors = validationResult(req);
 
 	if(!errors.isEmpty()) {
-		res.render('profile', {
+		return res.render('profile', {
 			user: req.user,
 			errors: errors.array()
 		});

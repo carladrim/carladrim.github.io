@@ -97,8 +97,8 @@ app.get('/', ensureAuthenticated, (req, res) => {
 
 	for (i in tags) tags[i] = '"'+tags[i]+'"';
 	let query = tags.toString().replace(/,/g, ' OR ');
-	Client.get('search/tweets', {q: query, count: 50 }, (error, tweets, response) => {
-		let tweet = tweets.statuses;
+	Client.get('search/tweets', {q: query, result_type: 'recent', count: 50 }, (err, data, response) => {
+		let tweet = data.statuses;
 		if(tweet === undefined) tweet = [];
 		if(redditp === undefined) redditp = [];
 		res.render('index', {
@@ -106,6 +106,17 @@ app.get('/', ensureAuthenticated, (req, res) => {
 			tweets: tweet,
 			reddits: redditp
 		});
+	});
+});
+
+// Post Tweet Process
+app.post('/post', ensureAuthenticated, (req, res) => {
+	Client.post('statuses/update', {status: 'lol *dab* ORCWall'}, (err, data, response) => {
+		if(err) {
+			console.log(err);
+			return;
+		}
+		res.redirect('/');
 	});
 });
 

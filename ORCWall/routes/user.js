@@ -96,6 +96,7 @@ router.post('/register', [
 			bcrypt.hash(newUser.password, salt, (err, hash) => {
 				if(err) {
 					console.log(err);
+					return;
 				}
 				newUser.password = hash;
 				newUser.save(err => {

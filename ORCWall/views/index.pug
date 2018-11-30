@@ -105,7 +105,7 @@ head
     .feed
       .feedoptions
         .options
-          form.tweetform(action='')
+          form.tweetform(method='POST', action='/post')
             input.tweetbox(type='text' name='tweettext' placeholder='Post to twitter! What are you thinking?')
             br
             input.mainbutton(type='submit' value='Tweet')

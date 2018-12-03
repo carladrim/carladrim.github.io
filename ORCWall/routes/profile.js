@@ -91,11 +91,6 @@ router.post('/edit', [
 	}
 });
 
-// Resources Route
-router.get('/resources', (req, res) => {
-  res.render('resources');
-});
-
 // Access Control
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) return next();

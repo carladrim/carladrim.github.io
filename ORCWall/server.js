@@ -121,10 +121,12 @@ app.post('/post', ensureAuthenticated, (req, res) => {
 });
 
 // Route Files
+let resources = require('./routes/resources');
 let profile = require('./routes/profile');
 let user = require('./routes/user');
 app.use('/profile', profile);
 app.use('/user', user);
+app.use('/resources', resources);
 
 // Access Control
 function ensureAuthenticated(req, res, next){

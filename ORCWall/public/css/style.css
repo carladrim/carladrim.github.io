@@ -344,6 +344,7 @@ html {
   max-width: 900px;
   min-width: 640px;
   margin: auto;
+  margin-left:25em;
   background-color: white;
   height: 100vh;
   margin-top: 4.5em;
@@ -596,7 +597,7 @@ textarea {
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 2; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;

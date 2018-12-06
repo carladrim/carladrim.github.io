@@ -86,7 +86,7 @@ app.get('/', ensureAuthenticated, (req, res) => {
 	if(tags.length == 0) tags[0] = "test";
 
 	for (i in tags){
-		axios.get('https://www.reddit.com/r/'+tags[0]+'/new.json')
+		axios.get('https://www.reddit.com/r/'+tags[0]+'/new.json?limit=10')
 			.then(function (response) {
 				redditp = response.data.data.children;
 			})

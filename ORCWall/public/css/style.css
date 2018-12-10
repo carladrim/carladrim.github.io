@@ -266,7 +266,7 @@ html {
 }
 .newscontainer {
   margin: 3em;
-  margin-top: 6em;
+  margin-top: 10em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -716,6 +716,30 @@ td.wider {
 }
 
 
+/* --------   TABS ------ */
+
+.tabs {
+  text-align: left;
+  padding: 1em;
+}
+
+.tabs a {
+  padding: 1em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#twtab {
+  color: #4286f4;
+}
+
+#rdtab {
+  color: #FF4500;
+}
+
+
+
+
 
 /* --------   TWEETS ------ */
 
@@ -761,6 +785,8 @@ label.twlabel {
   margin-bottom: 1em;
 }
 
+/*TWEETS*/
+
 .twcont{
   text-decoration:  none;
   width:            45em;
@@ -771,6 +797,7 @@ label.twlabel {
   margin-top:       0em;
   border-right:     solid 10px;
   border-color:     #4286f4;
+  padding-right: 1em;
   display:          flex;
   flex-direction:   row;
   font-family:      'Muli', sans-serif;
@@ -793,14 +820,14 @@ label.twlabel {
   width:100%;
   margin-left: 1em;
 }
-.groupA{
+.groupA {
   display:flex;
   flex-direction: row;
   position:relative;
   width:100%;
   align-items: center;
 }
-.groupA{
+.groupA {
   display:flex;
   flex-direction: row;
   width:100%;
@@ -833,6 +860,83 @@ label.twlabel {
   margin-top:0.5em;
 }
 .twlink{
+  text-decoration: none;
+}
+
+/* ------- REDDIT POSTS --------- */
+
+.rdcont{
+  text-decoration:  none;
+  width:            45em;
+  height:           auto;
+  background-color: white;
+  border-radius:    8px;
+  margin:           1em;
+  margin-top:       0em;
+  padding-right: 1em;
+  border-right:     solid 10px;
+  border-color:     #FF4500;
+  display:          flex;
+  flex-direction:   row;
+  font-family:      'Muli', sans-serif;
+  box-shadow:       2px 2px 5px rgba(38, 38, 38, 0.2);
+
+
+}
+.rdcont:hover{
+  box-shadow: 2px 2px 4px rgba(68, 68, 68, 0.6);
+  border-right: solid 15px;
+  border-color: #FF4500;
+  transition: border-right 0.1s linear;
+}
+.columnrd{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width:100%;
+  margin-left: 1em;
+}
+.groupA{
+  display:flex;
+  flex-direction: row;
+  position:relative;
+  width:100%;
+  align-items: center;
+}
+.groupA{
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  align-items: center;
+}
+.rdphoto{
+  width: 50%;
+  height: 50%;
+  margin:10px;
+}
+.rdnome{
+  margin-left: 0em;
+  color: #4286f4;
+  font-size: 0.8em;
+}
+.rddata{
+  font-size: 0.6em;
+  color: grey;
+  margin-top: 1em;
+}
+.rdutag{
+  color: darkgray;
+  margin-left: 0.5em;
+  font-size: 0.8em;
+}
+.rdtext{
+  color: black;
+  font-size: 1em;
+  margin-top:0.5em;
+}
+.rdlink{
   text-decoration: none;
 }
 

@@ -108,6 +108,10 @@ head
             input.tweetbox(type='text' name='tweettext' placeholder='What are you thinking?')
             br
             input.twbutton(type='submit' value='Tweet')
+        .options
+          .tabs
+            a#twtab(href='') Twitter
+            a#rdtab(href='') Reddit
       #tweetscontainer.newscontainer
         each tweet, i in tweets
           a.twlink(href='https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str)
@@ -120,16 +124,15 @@ head
                 .groupB
                   .twtext #{tweet.text}
                   .twdata #{tweet.created_at}
-        h1 Reddit posts
+      #redditcontainer.newscontainer
         each reddit, i in reddits
-          a.twlink(href=reddit.data.url)
-            .twcont
-              img.twphoto(src= reddit.data.thumbnail)
-              .columntw
+          a.rdlink(href=reddit.data.url)
+            .rdcont
+              img.rdphoto(src= reddit.data.thumbnail)
+              .columnrd
                 .groupA
-                  .twnome #{reddit.data.author}
-                  .twutag @#{reddit.data.author}
+                  .rdnome #{'u/'+reddit.data.author}
                 .groupB
-                  .twtext #{reddit.data.title}
-                  .twtext #{reddit.data.selftext}
-                  .twdata #{reddit.data.created_utc}
+                  .rdtext #{reddit.data.title}
+                  .rdtext #{reddit.data.selftext}
+                  .rddata #{reddit.data.created_utc}

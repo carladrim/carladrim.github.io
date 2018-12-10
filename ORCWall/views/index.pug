@@ -104,9 +104,10 @@ head
       .feedoptions
         .options
           form.tweetform(method='POST', action='/post')
-            input.tweetbox(type='text' name='tweettext' placeholder='Post to twitter! What are you thinking?')
+            label.twlabel Post to Twitter:
+            input.tweetbox(type='text' name='tweettext' placeholder='What are you thinking?')
             br
-            input.mainbutton(type='submit' value='Tweet')
+            input.twbutton(type='submit' value='Tweet')
       #tweetscontainer.newscontainer
         each tweet, i in tweets
           a.twlink(href='https://twitter.com/'+tweet.user.screen_name+'/status/'+tweet.id_str)

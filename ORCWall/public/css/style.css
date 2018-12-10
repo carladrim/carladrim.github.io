@@ -266,7 +266,7 @@ html {
 }
 .newscontainer {
   margin: 3em;
-  margin-top: 3em;
+  margin-top: 6em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -720,17 +720,43 @@ td.wider {
 /* --------   TWEETS ------ */
 
 .tweetform {
-  width: 98%;
+  width: 95%;
+  border-radius: 10px;
+  background-color: #4286f4;
+  padding: 1em;
+  text-align: left;
+}
+
+label.twlabel {
+  font-family: 'Muli', sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.twbutton {
+  background-color: #fefefe;
+  color: #4286f4;
+  font-family: "Muli", sans-serif;
+  font-weight: bold;
+  padding: 0.6em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 4px 2px 4px rgba(134, 134, 134, 0.25);
+  min-width: 94px;
+  cursor: pointer;
+  text-align: center;
 }
 
 .tweetbox {
-  width: 100%;
+  width: 95%;
   border: 1px solid #37a36d;
   font-family: 'Muli', sans-serif;
   color: darkgray;
   border-radius: 5px;
   padding: 1em;
-  padding-right: 0;
   margin: 0;
   margin-bottom: 1em;
 }

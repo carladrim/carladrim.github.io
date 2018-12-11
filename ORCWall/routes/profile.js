@@ -64,8 +64,6 @@ router.post('/edit', [
 	user.email = req.body.email;
 	user.first_name = req.body.first_name;
 	user.last_name = req.body.last_name;
-	user.school = req.body.school;
-	user.workplace = req.body.workplace;
 	user.profession = req.body.profession;
 	user.biography = req.body.biography;
 
@@ -77,6 +75,8 @@ router.post('/edit', [
 			errors: errors.array()
 		});
 	} else {
+
+		/*Change profile picture code*/
 
 		let query = {_id: req.user.id};
 

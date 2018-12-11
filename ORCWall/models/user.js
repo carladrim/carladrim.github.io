@@ -20,29 +20,29 @@ let userSchema = mongoose.Schema({
 	},
 	photo_url:{
 		type: String,
-		required: false,
 		default: "/resources/Images/user.png"
-	},
-	school:{
-		type: String,
-		default: "..."
-	},
-	workplace:{
-		type: String,
-		default: "..."
 	},
 	profession:{
 		type: String,
-		default: ""
+		default: "\u200b"
 	},
 	biography:{
 		type: String,
-		default: "..."
+		default: "\u200b"
 	},
-	hashtags:[{
-		type: String,
+	hashtags:{
+		type: [String],
 		required: false
-	}]
+	},
+	favorites:{
+		type: [{
+			title: String,
+			url: String,
+			description: String,
+			hashtags: [String]
+		}],
+		required: false
+	}
 });
 
 const User = module.exports = mongoose.model('User', userSchema);

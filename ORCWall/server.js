@@ -97,7 +97,7 @@ app.get('/', ensureAuthenticated, (req, res) => {
 
 	for (i in tags) tags[i] = '"'+tags[i]+'"';
 	let query = tags.toString().replace(/,/g, ' OR ');
-	Client.get('search/tweets', {q: query, result_type: 'recent', count: 50 }, (err, data, response) => {
+	Client.get('search/tweets', {q: query, result_type: 'recent', count: 20 }, (err, data, response) => {
 		let tweet = data.statuses;
 		if(tweet === undefined) tweet = [];
 		if(redditp === undefined) redditp = [];

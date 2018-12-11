@@ -10,6 +10,7 @@ html
         each error, i in errors
           p #{error.msg}
     .formwrapper
+      p.formtitle Register an account:
       form#idformwrapperauxiliar.formwrapperauxiliar(method='POST', action='/user/register')
         .formfield
           label.textform

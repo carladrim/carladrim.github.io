@@ -17,11 +17,22 @@ body{
 
 .formwrapper{
   display:          flex;
+  flex-direction: column;
   width:            478px;
   height:           auto;
   background-color: #FEFEFE;
   box-shadow:       4px 2px 4px rgba(134, 134, 134, 0.25);
+}
 
+.formtitle {
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
+  color: #009245;
+  font-size: 1.2em;
+  margin-left: 64px;
+  height: 2em;
+  margin-top: 64px;
+  margin-bottom: -2em;
 }
 
 .formwrapperauxiliar{

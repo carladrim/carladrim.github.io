@@ -10,6 +10,8 @@ html
       .error
         each error, i in errors
           p #{error.msg}
+    .logo
+      img#logoimgform(src='/resources/Logo/Logo.png')
     .formwrapper
       p.formtitle Register an account:
       form#idformwrapperauxiliar.formwrapperauxiliar(method='POST', action='/user/register')

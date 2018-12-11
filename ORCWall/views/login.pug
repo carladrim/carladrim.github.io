@@ -9,6 +9,8 @@ html
     if(errors)
       .error
         p #{errors}
+    .logo 
+      img#logoimgform(src='/resources/Logo/Logo.png')
     .formwrapper
       p.formtitle Enter your account:
       form#idformwrapperauxiliar.formwrapperauxiliar(method='POST', action='/user/login')

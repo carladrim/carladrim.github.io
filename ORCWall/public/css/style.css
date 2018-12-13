@@ -47,6 +47,8 @@ html {
   justify-content: space-between;
   height: auto;
   box-shadow: 4px 2px 4px rgba(134, 134, 134, 0.25);
+  padding-bottom:0.3em;
+  padding-top:0.3em;
 }
 
 /* LOGO - top bar */
@@ -225,10 +227,44 @@ html {
   align-items: center;
 }
 
+#twittertab{
+  background-color: #1da1f2;
+  border-radius: 24px;
+  color:white;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+#twlogo{
+  height:28px;
+  width:auto;
+
+}
+
+#reddittab{
+  BACKGROUND-COLOR: #ff4500;
+  border-radius: 24px;
+  color:white;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .sidebarsections:hover a {
-  color: #009245;
+
   cursor: pointer;
   font-weight: 700;
+}
+.sidebarsections:hover{
+    box-shadow: 4px 2px 4px rgba(204, 204, 204, 0.65);
 }
 
 .sidebarsections:hover .sideicon {
@@ -245,13 +281,14 @@ html {
 .childcontainer a {
   font-family: "Muli", sans-serif;
   font-weight: 400;
-  color: #91a59b;
+  color: white;
 }
 
 .leftbarIcon {
   display: flex;
   align-content: center;
 }
+
 
 /* FEED--*/
 
@@ -730,7 +767,7 @@ td.wider {
 }
 
 #twtab {
-  color: #4286f4;
+  color: #1da1f2;
 }
 
 #rdtab {
@@ -746,7 +783,7 @@ td.wider {
 .tweetform {
   width: 95%;
   border-radius: 10px;
-  background-color: #4286f4;
+  background-color: #1da1f2;
   padding: 1em;
   text-align: left;
 }
@@ -760,7 +797,7 @@ label.twlabel {
 
 .twbutton {
   background-color: #fefefe;
-  color: #4286f4;
+  color: #1da1f2;
   font-family: "Muli", sans-serif;
   font-weight: bold;
   padding: 0.6em;
@@ -796,7 +833,7 @@ label.twlabel {
   margin:           1em;
   margin-top:       0em;
   border-right:     solid 10px;
-  border-color:     #4286f4;
+  border-color:     #1da1f2;
   padding-right: 1em;
   display:          flex;
   flex-direction:   row;
@@ -808,7 +845,7 @@ label.twlabel {
 .twcont:hover{
   box-shadow: 2px 2px 4px rgba(68, 68, 68, 0.6);
   border-right: solid 15px;
-  border-color: #4286f4;
+  border-color: #1da1f2;
   transition: border-right 0.1s linear;
 }
 .columntw{
@@ -841,7 +878,7 @@ label.twlabel {
 }
 .twnome{
   margin-left: 0em;
-  color: #4286f4;
+  color: #1da1f2;
   font-size: 0.8em;
 }
 .twdata{
@@ -918,7 +955,7 @@ label.twlabel {
 }
 .rdnome{
   margin-left: 0em;
-  color: #4286f4;
+  color: #1da1f2;
   font-size: 0.8em;
 }
 .rddata{
@@ -967,6 +1004,12 @@ label.twlabel {
   background-color: none;
 }
 
+#melancia{
+  background-color: transparent;
+  box-shadow: 0px 0px 0px rgba(38, 38, 38, 0);
+  margin-bottom: 3em;
+}
+
 .rsc-card {
   text-decoration:  none;
   width:            40em;
@@ -978,7 +1021,7 @@ label.twlabel {
   display:          flex;
   padding: 1em;
   padding-bottom: 0;
-  
+
   flex-direction:   column;
   font-family:      'Muli', sans-serif;
   box-shadow:       2px 2px 5px rgba(38, 38, 38, 0.2);
@@ -1026,4 +1069,8 @@ label.twlabel {
   margin-bottom: 0.9em;
   padding: 0.3em;
   border-radius: 3px;
+}
+
+.rsc-tag:hover{
+  background-color: #2d8918;
 }

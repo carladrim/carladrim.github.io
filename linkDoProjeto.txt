@@ -1,0 +1,2 @@
+Para aceder ao site basta introduzir o IP do servidor no browser:
+104.248.249.41

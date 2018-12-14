@@ -91,6 +91,26 @@ router.post('/edit', [
 	}
 });
 
+// Change photos
+router.post('/photos', parser.single("image"), (req, res) => {
+
+	// Profile Picture URL saved in the database
+
+	if(req.file === undefined){
+		return res.redirect('/');
+	}
+
+	cloudinary.v2.uploader.upload(req.file.url, (error, result) => {
+		User.updateOne({_id: req.user.id}, {photo_url: result.url}, {new: true}, (err, doc) => {
+			if (err) {
+				console.log(err);
+				return;
+			}
+		});
+		res.redirect('/profile');
+	});
+});
+
 // Access Control
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) return next();

@@ -106,7 +106,6 @@ head
           img.userimage(src=user.photo_url)
           .userinfo
             h1.userdisplayname #{user.first_name} #{user.last_name}
-            h5.userbio #{user.profession}
         .profilenav
           button#myBtn2 Edit Profile
           form(method='POST', action='profile/photos', enctype='multipart/form-data', onchange="submit()")
@@ -127,21 +126,21 @@ head
             br
             input(type='text', name='last_name', value=user.last_name)
             br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Job Title:
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ORCID:
             br
-            input(type='text', name='profession', value=user.profession)
+            input(type='text', name='orcid', value=user.orcid)
             br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;E-Mail:
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Affiliation:
             br
-            input(type='text', name='email', value=user.email)
+            input(type='text', name='affiliation', value="")
             br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Studied At:
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Research Unit:
             br
-            input(type='text', name='school', value=user.school)
+            input(type='text', name='research_unit', value="")
             br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Works On:
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Research Interests:
             br
-            input(type='text', name='workplace', value=user.workplace)
+            input(type='text', name='interests', value="")
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Biography:
             br
@@ -149,23 +148,25 @@ head
             textarea#bio(name='biography', rows='2', cols='40')
               | #{user.biography}
             br
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Choose a new profile picture:
-            br
-            input(type='file' name='image')
-            br
             input#profilecancelbutton(type='button' value='Cancel')
             input.mainbutton(type='submit', value='Submit')
       // PROFILE INFORMATION
       #infoU
         .userinfo-box
           h5.userinfo-label E-Mail
-          h3.userinfo-content(contenteditable='false') #{user.email}
+          h3.userinfo-content #{user.email}
         .userinfo-box
-          h5.userinfo-label Studied At
-          h3.userinfo-content #{user.school}
+          h5.userinfo-label ORCID
+          h3.userinfo-content #{user.orcid}
         .userinfo-box
-          h5.userinfo-label Works On
+          h5.userinfo-label Affiliation
           h3.userinfo-content #{user.workplace}
+        .userinfo-box
+          h5.userinfo-label Research Unit
+          h3.userinfo-content #{user.workplace}
+        .userinfo-box
+          h5.userinfo-label Research Interests
+          h3.userinfo-content 
         .userinfo-box
           h5.userinfo-label Biography
           h3.userinfo-content-longer

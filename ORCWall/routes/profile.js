@@ -27,23 +27,6 @@ router.get('/', ensureAuthenticated, (req, res) => {
 // Profile Edit Process
 router.post('/edit', [
 
-	check('email')
-	.not()
-	.isEmpty()
-	.withMessage('Email is Required')
-	.isEmail()
-	.withMessage('Email is not Valid')
-	.custom((value, {req}) => {
-		return new Promise((resolve, reject) => {
-			User.findOne({email: value}, (err, user) => {
-				if(err) reject(new Error(err));
-				if(Boolean(user)){
-					if(req.user.email !== value) reject(new Error('E-mail Already in Use'));
-				}
-				resolve(true);
-			});
-		});
-	}),
 	check('first_name')
 	.not()
 	.isEmpty()
@@ -57,15 +40,35 @@ router.post('/edit', [
 	.withMessage('Last Name is Required')
 	.not()
 	.matches(/\d/)
-	.withMessage('Last Name can\'t contain Numbers')
+	.withMessage('Last Name can\'t contain Numbers'),
+	check('orcid')
+	.not()
+	.isEmpty()
+	.withMessage('ORCID is Required')
+	.matches(/\d{16}/)
+	.withMessage('ORCID Must Contain Only Numbers')
+	.isLength({min: 16}, {max: 16})
+	.withMessage('ORCID Must Contain 16 Numbers')
+	.custom((value, {req}) => {
+		return new Promise((resolve, reject) => {
+			User.findOne({orcid: value}, (err, user) => {
+				if(err) reject(new Error(err));
+				if(Boolean(user)){
+					if(req.user.orcid !== value) reject(new Error('ORCID Already in Use'));
+				}
+				resolve(true);
+			});
+		});
+	})
 
 ], (req, res) => {
 	let user = {};
-	user.email = req.body.email;
 	user.first_name = req.body.first_name;
 	user.last_name = req.body.last_name;
-	user.profession = req.body.profession;
+	user.orcid = req.body.orcid;
 	user.biography = req.body.biography;
+
+	console.log(user.orcid);
 
 	const errors = validationResult(req);
 

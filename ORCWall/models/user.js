@@ -22,13 +22,11 @@ let userSchema = mongoose.Schema({
 		type: String,
 		default: "/resources/Images/user.png"
 	},
-	profession:{
-		type: String,
-		default: "\u200b"
+	orcid:{
+		type: String
 	},
 	biography:{
-		type: String,
-		default: "\u200b"
+		type: String
 	},
 	hashtags:{
 		type: [String],

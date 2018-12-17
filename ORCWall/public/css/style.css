@@ -1106,4 +1106,31 @@ input[type="file"] {
 
 #custominput:hover{
   text-decoration: underline;
+ }
+form.resources-edit {
+  width: auto;
+  margin-left: auto;
+  font-family: 'Muli', sans-serif;
+  margin: auto;
+  margin-left: 35em;
+}
+
+form.resources-edit label {
+  display: block;
+  margin-bottom: 0.5em;
+
+}
+
+form.resources-edit input {
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em;
+  margin-bottom: 0.7em;
+}
+
+.resource-fields {
+  display: flex;
+  flex-direction: column;
+  width: 200%;
+
 }

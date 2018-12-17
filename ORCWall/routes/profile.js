@@ -69,6 +69,14 @@ router.post('/edit', [
 	user.affiliation = req.body.affiliation;
 	user.research_unit = req.body.research_unit;
 	user.biography = req.body.biography;
+	user.hashtags_string = req.body.interests;
+	const tags = req.body.interests.split(/\s+|\u0023+/);
+	while(true){
+		let index = tags.indexOf('');
+		if(index === -1) break;
+		tags.splice(index, 1);
+	}
+	user.hashtags = tags;
 
 	const errors = validationResult(req);
 

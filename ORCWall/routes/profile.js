@@ -66,9 +66,9 @@ router.post('/edit', [
 	user.first_name = req.body.first_name;
 	user.last_name = req.body.last_name;
 	user.orcid = req.body.orcid;
+	user.affiliation = req.body.affiliation;
+	user.research_unit = req.body.research_unit;
 	user.biography = req.body.biography;
-
-	console.log(user.orcid);
 
 	const errors = validationResult(req);
 

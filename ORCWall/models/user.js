@@ -25,6 +25,12 @@ let userSchema = mongoose.Schema({
 	orcid:{
 		type: String
 	},
+	affiliation:{
+		type: String
+	},
+	research_unit:{
+		type: String
+	},
 	biography:{
 		type: String
 	},

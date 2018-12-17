@@ -93,11 +93,11 @@ head
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Affiliation:
             br
-            input(type='text', name='affiliation', value="")
+            input(type='text', name='affiliation', value=user.affiliation)
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Research Unit:
             br
-            input(type='text', name='research_unit', value="")
+            input(type='text', name='research_unit', value=user.research_unit)
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Research Interests:
             br
@@ -121,10 +121,10 @@ head
           h3.userinfo-content #{user.orcid}
         .userinfo-box
           h5.userinfo-label Affiliation
-          h3.userinfo-content #{user.workplace}
+          h3.userinfo-content #{user.affiliation}
         .userinfo-box
           h5.userinfo-label Research Unit
-          h3.userinfo-content #{user.workplace}
+          h3.userinfo-content #{user.research_unit}
         .userinfo-box
           h5.userinfo-label Research Interests
           h3.userinfo-content 

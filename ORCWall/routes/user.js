@@ -143,13 +143,14 @@ router.get('/interests', (req, res) => {
 router.post('/interests', parser.single("image"), (req, res) => {
 
 	// Hashtags saved in the database
+	let user = {};
+	user.hashtags_string = req.body.tags;
 	const tags = req.body.tags.split(/\s+|\u0023+/);
 	while(true){
 		let index = tags.indexOf('');
 		if(index === -1) break;
 		tags.splice(index, 1);
 	}
-	let user = {};
 	user.hashtags = tags;
 	let query = {_id: req.user.id};
 	User.updateOne(query, user, err => {

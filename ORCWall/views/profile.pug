@@ -101,7 +101,7 @@ head
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Research Interests:
             br
-            input(type='text', name='interests', value="")
+            input(type='text', name='interests', value=user.hashtags_string)
             br
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Biography:
             br
@@ -127,7 +127,7 @@ head
           h3.userinfo-content #{user.research_unit}
         .userinfo-box
           h5.userinfo-label Research Interests
-          h3.userinfo-content 
+          h3.userinfo-content #{user.hashtags_string}
         .userinfo-box
           h5.userinfo-label Biography
           h3.userinfo-content-longer

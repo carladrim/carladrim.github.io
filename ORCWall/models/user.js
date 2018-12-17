@@ -34,6 +34,9 @@ let userSchema = mongoose.Schema({
 	biography:{
 		type: String
 	},
+	hashtags_string:{
+		type: String
+	},
 	hashtags:{
 		type: [String],
 		required: false

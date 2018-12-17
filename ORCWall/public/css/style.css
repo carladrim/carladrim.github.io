@@ -238,7 +238,7 @@ html {
   align-items: center;
 }
 
-#regularbutton {
+.regularbutton {
   background-color: #009245;
   border-radius: 24px;
   color:white;

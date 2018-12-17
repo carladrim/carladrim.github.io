@@ -1112,7 +1112,8 @@ input[type="file"] {
 #custominput:hover{
   text-decoration: underline;
  }
-form.resources-edit {
+
+ form.resources-edit {
   width: auto;
   margin-left: auto;
   font-family: 'Muli', sans-serif;
@@ -1137,5 +1138,5 @@ form.resources-edit input {
   display: flex;
   flex-direction: column;
   width: 200%;
-
 }
+

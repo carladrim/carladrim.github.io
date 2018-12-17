@@ -80,7 +80,19 @@ html
       br
       br
       #rsc-container.newscontainer
-        .rsc-card#melancia
+        form.resources-edit
+          .resources-fields
+            label Title:
+            input(type='text', name='title', value="")
+            br
+            label URL:
+            input(type='text', name='link', value="")
+            br
+            label Description:
+            input(type='text', name='description', value="")
+          .resource-buttons
+            input.mainbutton(type="submit" value="Add")
+          .rsc-card#melancia
           .rsc-tags-container
             a(href='')
               p.rsc-tag link

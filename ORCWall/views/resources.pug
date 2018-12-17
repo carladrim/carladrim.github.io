@@ -79,6 +79,18 @@ html
       br
       br
       #rsc-container.newscontainer
+        form.resources-edit(method="POST" action="")
+          label Title:
+          input(type='text', name='title', value="")
+          br
+          label URL:
+          input(type='text', name='link', value="")
+          br
+          label Description:
+          input(type='text', name='description', value="")
+          br
+          input#profilecancelbutton(type="button" value="Cancel")
+          input.mainbutton(type="submit" value="Save")
         .rsc-card#melancia
           .rsc-tags-container
             a(href='')
@@ -137,16 +149,5 @@ html
             a(href='')
               p.rsc-tag link
 
-    .modal#resourcesmodal
-      .modal-content
-        form.profile-edit(method="POST" action="")
-          input(type='text', name='title', value="")
-          br
-          input(type='text', name='link', value="")
-          br
-          input(type='text', name='description', value="")
-          br
-          input#profilecancelbutton(type="button" value="Cancel")
-          input.mainbutton(type="submit" value="Save")
 
 script(src='public/tabs.js')

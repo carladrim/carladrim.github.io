@@ -1082,3 +1082,10 @@ label.twlabel {
 .rsc-tag:hover{
   background-color: #2d8918;
 }
+
+form.resources-edit {
+  width: 50%;
+  margin-left: auto;
+  font-family: 'Muli', sans-serif;
+  margin: auto;
+}

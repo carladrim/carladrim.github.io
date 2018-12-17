@@ -61,6 +61,9 @@ html
         a
         .sidebarsmall
           a
+          .sidebarsections#regularbutton
+            a(onclick="location.href = '/';") Add new
+            a(href='/')
           .sidebarsections
             a(href='/')
               .leftbarIcon
@@ -148,3 +151,15 @@ html
               p.rsc-tag kill me
             a(href='')
               p.rsc-tag link
+
+    .modal#resourcesmodal
+      .modal-content
+        form.profile-edit(method="POST" action="")
+          input(type='text', name='title', value="")
+          br
+          input(type='text', name='link', value="")
+          br
+          input(type='text', name='description', value="")
+          br
+          input#profilecancelbutton(type="button" value="Cancel")
+          input.mainbutton(type="submit" value="Save")

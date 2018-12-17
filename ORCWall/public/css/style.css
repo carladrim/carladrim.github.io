@@ -236,10 +236,18 @@ html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-
 }
 
+#regularbutton {
+  background-color: #009245;
+  border-radius: 24px;
+  color:white;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
 #twlogo{
   height:28px;

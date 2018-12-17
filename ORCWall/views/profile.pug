@@ -70,7 +70,8 @@ head
         .profilenav
           button#myBtn2 Edit Profile
           form(method='POST', action='profile/photos', enctype='multipart/form-data', onchange="submit()")
-            input#fajl(type='file', name='image' onchange())
+            label#custominput Edit Avatar
+              input#fajl(type='file', name='image' onchange())
       #myModal2.modal
         // Modal content
         .modal-content

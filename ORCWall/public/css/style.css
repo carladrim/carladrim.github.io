@@ -266,6 +266,10 @@ html {
   align-items: center;
 }
 
+#redditcontainer {
+  display: none;
+}
+
 .sidebarsections:hover a {
 
   cursor: pointer;

@@ -65,14 +65,14 @@ head
       .sidebarsmall
         a
         .sidebarsections#twittertab
-          a(onclick="location.href = '/';") Twitter
-          a(href='/')
+          a(onclick="") Twitter
+          a(href='')
             .leftbarIcon
               img#twlogo(src='TWlogo.png')
         a
         .sidebarsections#reddittab
-          a(onclick="location.href = '/resources';") Reddit
-          a(href='/resources')
+          a(onclick="") Reddit
+          a(href="")
             .leftbarIcon
               img#twlogo(src='RElogo.png')
     // MAIN BODY - feed
@@ -108,6 +108,5 @@ head
                   .rdtext #{reddit.data.title}
                   .rdtext #{reddit.data.selftext}
                   .rddata #{reddit.data.created_utc}
-                  
-script(src='tabs.js')
-    
+                
+  script(src='tabs.js')

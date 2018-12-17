@@ -79,29 +79,7 @@ html
       br
       br
       #rsc-container.newscontainer
-        form.resources-edit(method="POST" action="")
-          .resource-fields
-            label Title:
-            input(type='text', name='title', value="")
-            br
-            label URL:
-            input(type='text', name='link', value="")
-            br
-            label Description:
-            input(type='text', name='description', value="")
-          br
-          .resource-buttons
-            input.mainbutton(type="submit" value="Add")
         .rsc-card#melancia
-        br
-        .rsc-card
-          a(href='')
-            h3.rsc-title This is this link's title!
-          p.rsc-url https://thisisanurl.com/en
-          p.rsc-description
-            | This is a description for what this link is supposed to do,
-            | and why it might be useful sometime in the future. It's also kind of lenghty, but
-            | that's quite alright. It can be.
           .rsc-tags-container
             a(href='')
               p.rsc-tag link
@@ -109,22 +87,17 @@ html
               p.rsc-tag tagging
             a(href='')
               p.rsc-tag kill me
+            a(href='')
+              p.rsc-tag link
+        br
+        br
+      
         .rsc-card
           a(href='')
             h3.rsc-title This is this link's title!
-          p.rsc-url https://thisisanurl.com/en
-          p.rsc-description
-            | This is a description for what this link is supposed to do,
-            | and why it might be useful sometime in the future. It's also kind of lenghty, but
-            | that's quite alright. It can be.
-          .rsc-tags-container
-            a(href='')
-              p.rsc-tag link
-            a(href='')
-              p.rsc-tag link
-        .rsc-card
-          a(href='')
-            h3.rsc-title This is this link's title!
+            svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24')
+              path(d='M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z')
+              path(d='M0 0h24v24H0z' fill='none')
           p.rsc-url https://thisisanurl.com/en
           p.rsc-description
             | This is a description for what this link is supposed to do,
@@ -140,5 +113,16 @@ html
             a(href='')
               p.rsc-tag link
 
+    .modal#resourcesmodal
+      .modal-content
+        form.profile-edit(method="POST" action="")
+          input(type='text', name='title', value="")
+          br
+          input(type='text', name='link', value="")
+          br
+          input(type='text', name='description', value="")
+          br
+          input#profilecancelbutton(type="button" value="Cancel")
+          input.mainbutton(type="submit" value="Save")
 
 script(src='public/tabs.js')
